@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import {Link} from 'react-scroll';
 import Padma from './../asserts/images/padma/Padma.webp';
 import Switch from "react-bootstrap/Switch";
-
-import {CardImg} from "react-bootstrap";
+import {setDarkTheme} from "../store/action/storeAction";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 
 const SlideNav: React.FC = () => {
@@ -20,18 +21,15 @@ const SlideNav: React.FC = () => {
   window.onscroll= () => {
     setMyBorderRadius(window.pageYOffset/50);
   }
-  // const isDark: boolean = useSelector((state: RootState) => state.onlineStoreReducer.isDarkTheme);
-
-  const isDark: boolean= true;
-  const handleOnThemeChange = () => console.log("DDD")
-  // const dispatch = useDispatch();
-  // const handleOnThemeChange = () => {
-  //   if (isDark) {
-  //     dispatch(setDarkTheme(false));
-  //   } else {
-  //     dispatch(setDarkTheme(true));
-  //   }
-  // }
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
+  const dispatch = useDispatch();
+  const handleOnThemeChange = () => {
+    if (isDark) {
+      dispatch(setDarkTheme(false));
+    } else {
+      dispatch(setDarkTheme(true));
+    }
+  }
 
 
   return (
