@@ -36,12 +36,12 @@ const Achievements: React.FC = () => {
   ];
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
-    <a key={index} href={item.link} target='_blank'>
-      <Card body className='m-1 text-left achievement' style={{width: '47%', float: 'left'}}><span>{item.title}</span></Card></a>);
+    <a key={index} href={item.link} target='_blank'><Card body className='m-1 text-left achievement'
+        style={{width: '47%', float: 'left'}}><span>{item.title}</span></Card></a>);
 
   return (
     <div className='achievements'>
-      <h1 id='achievements'>Achievements</h1>
+      <h1 id='achievements' className='pt-5 mt-2'>Achievements</h1>
       {
         renderAchievements()
       }

@@ -4,7 +4,7 @@ import {Card} from "react-bootstrap";
 const Contact: React.FC = () => {
   return (
     <React.Fragment>
-      <h1>Contact me</h1>
+      <h1 className='pt-5 mt-2'>Contact me</h1>
       <table id='contact' className='m-auto'>
         <tr>
           <td>Email</td>

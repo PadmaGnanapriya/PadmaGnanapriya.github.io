@@ -74,7 +74,7 @@ const Articles: React.FC = () => {
 
   return (
     <div className='articles'>
-      <h1 id='articles'>My medium articles</h1>
+      <h1 id='articles' className='pt-5 mt-2'>My medium articles</h1>
       {renderArticleList()}
 
     </div>

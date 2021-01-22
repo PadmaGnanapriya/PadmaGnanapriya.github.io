@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
   );
   return (
     <div className='projects'>
-      <h1 id='projects'>Projects</h1>
+      <h1 id='projects' className='pt-5 mt-2'>Projects</h1>
       <Card className='proj' style={{ width: '18rem' }}>
         <Card.Img variant="top" src={project1} className='p-1'/>
         <Card.Body>

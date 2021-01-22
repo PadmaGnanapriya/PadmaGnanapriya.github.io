@@ -1,22 +1,57 @@
-import React from 'react';
-import {Nav, Navbar} from "react-bootstrap";
+import React, {useState} from 'react';
+import {Link} from 'react-scroll';
+import Padma from './../asserts/images/padma/Padma.webp';
+import Switch from "react-bootstrap/Switch";
+
+import {CardImg} from "react-bootstrap";
+
 
 const SlideNav: React.FC = () => {
+
+  const myList: string[] = ["home", "about", "education", "skills", "projects", "achievements", "articles", "contact"]
+
+  const renderList = () => myList.map((item) => <li><Link key={item} activeClass="active" className={`${item} myLink`}
+                                                          to={item} spy={true} smooth={true}
+                                                          duration={500}>{item}</Link></li>
+  )
+
+  const [myBorderRadius, setMyBorderRadius]= useState(0);
+
+  window.onscroll= () => {
+    setMyBorderRadius(window.pageYOffset/50);
+  }
+  // const isDark: boolean = useSelector((state: RootState) => state.onlineStoreReducer.isDarkTheme);
+
+  const isDark: boolean= true;
+  const handleOnThemeChange = () => console.log("DDD")
+  // const dispatch = useDispatch();
+  // const handleOnThemeChange = () => {
+  //   if (isDark) {
+  //     dispatch(setDarkTheme(false));
+  //   } else {
+  //     dispatch(setDarkTheme(true));
+  //   }
+  // }
+
+
   return (
-      <div className='vh-100 slide-nav'
-           style={{position: 'fixed', width: '100%'}}
-      >
-        <br/>
-        <nav>
-          <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#education">Education</Nav.Link>
-          <Nav.Link href="#skills">Skills</Nav.Link>
-          <Nav.Link href="#projects">Projects</Nav.Link>
-          <Nav.Link href="#achievements">Achievements</Nav.Link>
-          <Nav.Link href="#articles">Articles</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
-        </nav>
-      </div>
+
+    <div className='vh-100 slide-nav'>
+      <br/>
+      <img src={Padma} alt="Padma" width={200} style={{ borderRadius: `${myBorderRadius}%`}}/>
+
+
+      <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>
+        <Switch onChange={handleOnThemeChange} checked={isDark}/>
+      </label>
+      <nav>
+        <ul>
+          {renderList()}
+        </ul>
+        {/*<Nav.Link href="#contact">Contact</Nav.Link>*/}
+        {/*<Link activeClass="active" className="skills" to="skills" spy={true} smooth={true} duration={500} >skills</Link>*/}
+      </nav>
+    </div>
   );
 }
 
