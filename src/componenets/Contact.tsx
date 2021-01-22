@@ -1,10 +1,15 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Contact: React.FC = () => {
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
   return (
-    <React.Fragment>
-      <h1 className='pt-5 mt-2'>Contact me</h1>
+    <div className={isDark?'contact-dark py-3 px-3 px-md-4 px-lg-5': 'contact py-3 px-3 px-md-4 px-lg-5'}>
+
+    <h1 className='pt-5 mt-2'>Contact me</h1>
       <table id='contact' className='m-auto'>
         <tr>
           <td>Email</td>
@@ -44,7 +49,7 @@ const Contact: React.FC = () => {
       </table>
 
 
-    </React.Fragment>
+    </div>
   );
 }
 export default Contact;

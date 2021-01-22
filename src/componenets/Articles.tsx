@@ -1,5 +1,7 @@
 import React from 'react';
-import {Card} from "react-bootstrap";
+import {Card, Col, Row} from "react-bootstrap";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Articles: React.FC = () => {
 
@@ -10,7 +12,7 @@ const Articles: React.FC = () => {
 
   const myArticles: Article[] = [
     {
-      title: "How Mozilla Firefox and Google Chrome Use Process & Threads",
+      title: "How Firefox and Google Chrome Use Process & Threads",
       link: "https://medium.com/swlh/how-mozilla-firefox-and-google-chrome-use-process-threads-7f17a9c79ba0"
     },
     {
@@ -67,15 +69,18 @@ const Articles: React.FC = () => {
     }
   ];
 
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
   const renderArticleList = () => myArticles.map((item: Article, index: number) =>
-    <a key={index} href={item.link} target='_blank'>
-      <Card body className='m-1 article text-left' style={{width: '47%', float: 'left'}}><span>{item.title}</span>
-      </Card></a>);
+      <Col xs={12} sm={12} lg={6} className='p-0'><a key={index} href={item.link} target='_blank'>
+        <Card body className='m-1 article text-left' ><span>{item.title}</span></Card></a></Col>);
 
   return (
-    <div className='articles'>
+    <div className={isDark? 'articles-dark px-3 py-3 px-md-4 px-lg-5': 'articles py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='articles' className='pt-5 mt-2'>My medium articles</h1>
-      {renderArticleList()}
+      <Row>
+        {renderArticleList()}
+      </Row>
 
     </div>
   );

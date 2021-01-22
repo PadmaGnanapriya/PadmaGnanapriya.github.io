@@ -39,8 +39,8 @@ const SlideNav: React.FC = () => {
       <img src={Padma} alt="Padma" width={200} style={{ borderRadius: `${myBorderRadius}%`}}/>
 
 
-      <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>
-        <Switch onChange={handleOnThemeChange} checked={isDark}/>
+      <label className="pt-2 pr-2 pl-1 " onClick={handleOnThemeChange}>
+        <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={isDark}/>
       </label>
       <nav>
         <ul>

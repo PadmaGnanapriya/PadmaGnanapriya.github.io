@@ -20,14 +20,13 @@ function App() {
   return (
     <div className="App">
       <Row className='m-0'>
-        <Col lg={3} className='p-0 m-0 d-none d-lg-block'>
+        <Col lg={3} className='p-0 m-0 d-none d-lg-block left-side'>
           <SlideNav/>
         </Col>
-        <Col xs={12} sm={12} lg={9} className='p-0 bg-info'>
+        <Col xs={12} sm={12} lg={9} className='p-0 right-side'>
           <Headroom>
             <Header/>
           </Headroom>
-          <Container>
             <Home/>
             <About/>
             <Education/>
@@ -36,12 +35,11 @@ function App() {
             <Achievements/>
             <Articles/>
             <Contact/>
-          </Container>
 
         </Col>
       </Row>
-      <Row>
-        <Col sm={12} xs={12}>
+      <Row className='m-0'>
+        <Col sm={12} xs={12} className='p-0'>
           <Footer/>
         </Col>
       </Row>

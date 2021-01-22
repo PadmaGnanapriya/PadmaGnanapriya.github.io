@@ -1,8 +1,11 @@
 import React from 'react';
 import {Card, Button, OverlayTrigger, Popover} from 'react-bootstrap';
 import project1 from "../asserts/images/projects/project1.webp";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Projects: React.FC = () => {
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const popoverProject1 = (
     <Popover id="popover-basic">
@@ -14,7 +17,7 @@ const Projects: React.FC = () => {
     </Popover>
   );
   return (
-    <div className='projects'>
+    <div className={isDark? 'projects-dark py-3 px-3 px-md-4 px-lg-5': 'projects py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='projects' className='pt-5 mt-2'>Projects</h1>
       <Card className='proj' style={{ width: '18rem' }}>
         <Card.Img variant="top" src={project1} className='p-1'/>

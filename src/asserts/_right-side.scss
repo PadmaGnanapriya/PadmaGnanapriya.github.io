@@ -1,0 +1,132 @@
+$background-color-light: #cedeec;
+$background-color-dark: #484e5d;
+$font-color-light: white;
+$font-color-dark: #19192f;
+
+
+.right-side {
+  font-size: large;
+  background: $background-color-light;
+  color: $font-color-dark;
+
+  .header-dev{
+    a {
+      color: $font-color-light;
+    }
+  }
+  .header-dev-dark{
+    a {
+      color: $font-color-dark;
+    }
+  }
+
+  .about-dark{
+    //@extend .about;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+  .education-dark{
+    //@extend .education;
+    background: $background-color-dark;
+    color: $font-color-light;
+    a{
+      color: $font-color-light;
+    }
+  }
+
+
+  .skills {
+    .languageIcon:hover {
+      transform: scale(1.06);
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s ease-in-out;
+    }
+  }
+
+  .skills-dark {
+    @extend .skills;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+
+  .projects {
+    .proj:hover {
+      transform: scale(1.02);
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s ease-in-out;
+    }
+  }
+
+  .projects-dark {
+    @extend .projects;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+  .achievements {
+    a:hover{
+      text-decoration: none;
+    }
+    span{
+      color: $font-color-dark;
+    }
+    .achievement:hover {
+      transform: scaleY(1.15);
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s ease-in-out;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .achievements-dark {
+    @extend .achievements;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+
+
+  .articles {
+    a:hover{
+      text-decoration: none;
+    }
+    span{
+      color: $font-color-dark;
+    }
+    .article:hover {
+      transform: scaleY(1.15);
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s ease-in-out;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .articles-dark {
+    @extend .articles;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+  .contact {
+    a {
+      color: $font-color-dark;
+    }
+  }
+  .contact-dark {
+    @extend .contact;
+    background: $background-color-dark;
+    color: $font-color-light;
+  }
+
+}

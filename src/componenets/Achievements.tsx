@@ -1,5 +1,7 @@
 import React from 'react';
-import {Card} from "react-bootstrap";
+import {Card, Col, Row} from "react-bootstrap";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Achievements: React.FC = () => {
 
@@ -34,17 +36,21 @@ const Achievements: React.FC = () => {
       link: "https://coursera.org/share/dd553a3b8bd01c9b5f3c743a298f4505"
     },
   ];
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
-    <a key={index} href={item.link} target='_blank'><Card body className='m-1 text-left achievement'
-        style={{width: '47%', float: 'left'}}><span>{item.title}</span></Card></a>);
+    <Col xs={12} sm={12} lg={6} className='p-0'><a key={index} href={item.link} target='_blank'><Card body className='m-1 text-left achievement'
+                                                                                     ><span>{item.title}</span></Card></a></Col>);
 
   return (
-    <div className='achievements'>
-      <h1 id='achievements' className='pt-5 mt-2'>Achievements</h1>
-      {
-        renderAchievements()
-      }
+    <div className={isDark?'achievements-dark py-3 px-3 px-md-4 px-lg-5': 'achievements py-3 px-3 px-md-4 px-lg-5'}>
+      <h1 id='achievements' className='pt-5'>Achievements</h1>
+      <Row>
+        {
+          renderAchievements()
+        }
+      </Row>
+
     </div>
   );
 }
