@@ -1,0 +1,49 @@
+.slide-nav{
+  position: absolute;
+  nav{
+    position: fixed;
+    font-size: x-large;
+  }
+}
+.skills{
+  .languageIcon:hover{
+    transform: scale(1.06);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s ease-in-out;
+  }
+}
+
+.projects{
+  .proj:hover{
+    transform: scale(1.02);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s ease-in-out;
+  }
+}
+
+.achievements{
+  .achievement:hover{
+    transform: scaleY(1.15);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s ease-in-out;
+    span{
+      font-weight: 700;
+    }
+  }
+}
+
+
+.articles{
+  .article:hover{
+    transform: scaleY(1.15);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s ease-in-out;
+    span{
+      font-weight: 700;
+    }
+  }
+}

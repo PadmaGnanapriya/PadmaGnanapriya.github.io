@@ -68,16 +68,16 @@ const Articles: React.FC = () => {
   ];
 
   const renderArticleList = () => myArticles.map((item: Article, index: number) =>
-    <a key={index} href={item.link} target='_blank'><Card body className='m-1' style={{width: '47%', float: 'left'}}>
-      {item.title}</Card></a>);
-
+    <a key={index} href={item.link} target='_blank'>
+      <Card body className='m-1 article text-left' style={{width: '47%', float: 'left'}}><span>{item.title}</span>
+      </Card></a>);
 
   return (
-    <React.Fragment>
+    <div className='articles'>
       <h1 id='articles'>My medium articles</h1>
       {renderArticleList()}
 
-    </React.Fragment>
+    </div>
   );
 }
 
