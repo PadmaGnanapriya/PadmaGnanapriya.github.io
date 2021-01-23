@@ -39,8 +39,8 @@ const Achievements: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
-    <Col xs={12} sm={12} lg={6} className='p-0'><a key={index} href={item.link} target='_blank'><Card body className='m-1 text-left achievement'
-                                                                                     ><span>{item.title}</span></Card></a></Col>);
+    <Col xs={12} sm={12} lg={6} className='p-0'><a key={index} href={item.link} target='_blank'>
+      <Card body className='m-1 text-left achievement'><span>{item.title}</span></Card></a></Col>);
 
   return (
     <div className={isDark?'achievements-dark py-3 px-3 px-md-4 px-lg-5': 'achievements py-3 px-3 px-md-4 px-lg-5'}>

@@ -1,8 +1,10 @@
 import React from 'react';
 import {Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-scroll";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import Switch from "react-bootstrap/Switch";
+import {setDarkTheme} from "../store/action/storeAction";
 
 const Header: React.FC = () => {
 
@@ -14,13 +16,31 @@ const Header: React.FC = () => {
 
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
+  const dispatch = useDispatch();
+  const handleOnThemeChange = () => {
+    if (isDark) {
+      dispatch(setDarkTheme(false));
+    } else {
+      dispatch(setDarkTheme(true));
+    }
+  }
+
   return (
     <React.Fragment>
       <Navbar collapseOnSelect expand="md" bg={isDark ? "dark" : "light"} variant={isDark ? "dark" : "light"}
-              className={isDark ? 'header-dev' : 'header-dev-dark'}>
+              className={isDark ? 'header-dev d-lg-none' : 'header-dev-dark d-lg-none'}>
         <Navbar.Brand><Link activeClass="active" className="home"
-                            to="home" spy={true} smooth={true} duration={500}>Padma Gnanapriya</Link></Navbar.Brand>
+                            to="home" spy={true} smooth={true} duration={500}>Padma</Link></Navbar.Brand>
+
+
+        <label className="pt-2 pr-2 pl-1 d-md-none" onClick={handleOnThemeChange}>
+          <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
+        </label>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+
+
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
 
@@ -37,8 +57,16 @@ const Header: React.FC = () => {
             {/*<Nav.Link href="#contact">Contact</Nav.Link>*/}
 
           </Nav>
+          <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>
+            <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
+          </label>
         </Navbar.Collapse>
+
+
       </Navbar>
+
+
+
     </React.Fragment>
   );
 }

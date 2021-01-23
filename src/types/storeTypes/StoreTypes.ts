@@ -1,4 +1,4 @@
-import {CHANGE_MODE} from "../constants";
+import {CHANGE_MODE, CHANGE_VIEW_Y_POSITION} from "../constants";
 
 export interface ChangeTheme {
   type: typeof CHANGE_MODE;
@@ -6,4 +6,11 @@ export interface ChangeTheme {
 }
 
 
-export type StoreActionTypes = ChangeTheme;
+
+export interface ChangeViewYPosition {
+  type: typeof CHANGE_VIEW_Y_POSITION;
+  payload: number;
+}
+
+
+export type StoreActionTypes = ChangeTheme | ChangeViewYPosition;

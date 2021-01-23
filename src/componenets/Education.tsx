@@ -23,7 +23,8 @@ const Education: React.FC = () => {
       <br/>
 
       <a href='https://www.mahindacollege.lk/' target='_blank'><h3 className='text-left'>Mahinda College Galle</h3></a>
-      <p className='text-left'> I did my O/Ls and A/Ls at Mahinda College, Galle. I got 7A s and 2B s for my OLs. In 2017 I faced for A/L
+      <p className='text-left'> I did my O/Ls and A/Ls at Mahinda College, Galle. I got 7A s and 2B s for my OLs.
+        In 2017 I faced for A/L
         examination in Physical Stream and obtained the following results;
         <br/><span style={{color: "red"}}>&#9734;</span> Combined Maths - A
         <br/><span style={{color: "red"}}>&#9734;</span> Physics - A
@@ -33,8 +34,10 @@ const Education: React.FC = () => {
         club and world organisation of scout moment, and I was an outstanding player in the school's chess team.</p>
       <br/>
 
-      <a href='https://www.facebook.com/polpagodadharmapalacollege'><h3 className='text-left'>Polpagoda Darmapala MV.</h3></a>
-      <p className='text-left'>I passed the grade 5 scholarship exam at Polpogoda Dharmapala MV and I entered to Mahinda College Galle.</p>
+      <a href='https://www.facebook.com/polpagodadharmapalacollege'><h3 className='text-left'>Polpagoda Darmapala MV.
+      </h3></a>
+      <p className='text-left'>I passed the grade 5 scholarship exam at Polpogoda Dharmapala MV and I entered to
+        Mahinda College Galle.</p>
     </div>
   );
 }

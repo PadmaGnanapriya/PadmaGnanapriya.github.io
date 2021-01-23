@@ -14,16 +14,20 @@ import Skills from "./componenets/Skills";
 import Achievements from "./componenets/Achievements";
 import Headroom from "react-headroom";
 import "./../src/asserts/main.scss";
+import {useSelector} from "react-redux";
+import {RootState} from "./store/reducer/myReducer";
 
 function App() {
-  document.title = "Padma Gnanapriya"
+  document.title = "Padma Gnanapriya";
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
   return (
     <div className="App">
       <Row className='m-0'>
-        <Col lg={3} className='p-0 m-0 d-none d-lg-block left-side'>
+        <Col lg={3} xl={2} className={`p-0 m-0 d-none slide-base d-lg-block left-side ${isDark?  'bg-dark': 'bg-light'}`}>
           <SlideNav/>
         </Col>
-        <Col xs={12} sm={12} lg={9} className='p-0 right-side'>
+        <Col xs={12} sm={12} lg={9} xl={10} className='p-0 right-side'>
           <Headroom>
             <Header/>
           </Headroom>

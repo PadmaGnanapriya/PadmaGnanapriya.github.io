@@ -1,10 +1,36 @@
 import React from 'react';
+import Padma from "../asserts/images/padma/Padma.webp";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Home: React.FC = () => {
+  const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
   return (
     <React.Fragment>
-      <div id='home'>
-        home
+      {/**Show the animation for medium, large, extra large**/}
+      <div id='home' className='text-left my-home d-none d-md-block' style={{minHeight: '75vh'}}>
+        <span style={{
+          marginLeft: `${200 - viewYPosition * 30}px`, top: `${viewYPosition * 20 + 230}px`,
+          fontSize: `${100 - viewYPosition * 20}px`
+        }}>I'm</span>
+        <br/>
+        <strong className='pt-5 mt-5' style={{
+          marginLeft: `${viewYPosition * 20 + 200}px`,
+          top: `${viewYPosition * 20 + 200}px`, fontSize: `${100 - viewYPosition * 20}px`
+        }}>Padma</strong>
+        {
+          viewYPosition * 32 < 240 &&
+
+          <img src={Padma} alt="Padma" width={viewYPosition * 32 > 100 ? 280 - viewYPosition * 32 : viewYPosition * 47}
+               className='ml-4' style={{
+            borderRadius: `100%`,
+            position: 'absolute', top: `${viewYPosition * 12 + 230}px`
+          }}/>}
+        <span style={{
+          position: 'absolute', left: `${-550 + viewYPosition * 180}px`, top: `${viewYPosition * 13 + 230}px`,
+          fontSize: `${viewYPosition * 32 > 150 ? 1 : 110 - viewYPosition * 16}px`
+        }}>Gnanapriya</span>
+
       </div>
 
 
