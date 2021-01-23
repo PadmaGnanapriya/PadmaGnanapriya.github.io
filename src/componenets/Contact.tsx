@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from "react-bootstrap";
+import {Card, Col, Row} from "react-bootstrap";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 
@@ -10,43 +10,25 @@ const Contact: React.FC = () => {
     <div className={isDark?'contact-dark py-3 px-3 px-md-4 px-lg-5': 'contact py-3 px-3 px-md-4 px-lg-5'}>
 
     <h1 className='pt-5 mt-2'>Contact me</h1>
-      <table id='contact' className='m-auto'>
-        <tr>
-          <td>Email</td>
-          <td>
-            <Card body className='my-2'>
-              <a href="mailto:padmaisuru@gmail.com">padmaisuru@gmail.com</a>
-            </Card>
-            <Card body className='my-2'>
-              <a href="mailto:padmagnanapriya@gmail.com">padmagnanapriya@gmail.com</a>
-            </Card>
-          </td>
-        </tr>
-        <tr>
-          <td>SMS</td>
-          <td>
-            <Card body className='my-2 my-1'>
-              <a href="sms:+94766328189">+94 766 328 189</a>
-            </Card>
-          </td>
-        </tr>
-        <tr>
-          <td>Call</td>
-          <td>
-            <Card body className='my-2 my-1'>
-              <a href="tel:+94766328189">+94 766 328 189</a>
-            </Card>
-          </td>
-        </tr>
-        <tr>
-          <td>WhatsApp</td>
-          <td>
-            <Card body className='my-2 my-1'>
-              <a href="https://api.whatsapp.com/send?phone=+94766328189">+94 766 328 189</a>
-            </Card>
-          </td>
-        </tr>
-      </table>
+      <Card body id='contact' className='contact my-2 mx-auto' style={{maxWidth:'400px'}}>
+        <Row className='mt-1'>
+          <Col className='text-left pl-4' xs={12} sm={4}>Email</Col>
+          <Col className='text-left pl-4' xs={12} sm={8}><a href="mailto:padmaisuru@gmail.com">padmaisuru@gmail.com</a></Col>
+        </Row>
+        <Row className='mt-3'>
+          <Col className='text-left pl-4' xs={12} sm={4}>SMS</Col>
+          <Col className='text-left pl-4' xs={12} sm={8}><a href="sms:+94766328189">+94 766 328 189</a></Col>
+      </Row>
+        <Row className='mt-3'>
+          <Col className='text-left pl-4' xs={12} sm={4}>Call</Col>
+          <Col className='text-left pl-4' xs={12} sm={8}><a href="tel:+94766328189">+94 766 328 189</a></Col>
+      </Row>
+        <Row className='mt-3'>
+          <Col className='text-left pl-4' xs={12} sm={4}>WhatsApp</Col>
+          <Col className='text-left pl-4' xs={12} sm={8}><a href="https://api.whatsapp.com/send?phone=+94766328189">+94 766 328 189</a></Col>
+        </Row>
+      </Card>
+
 
 
     </div>

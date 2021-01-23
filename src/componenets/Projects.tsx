@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
   return (
     <div className={isDark? 'projects-dark py-3 px-3 px-md-4 px-lg-5': 'projects py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='projects' className='pt-5 mt-2'>Projects</h1>
-      <Card className='proj' style={{ width: '18rem' }}>
+      <Card className='proj mx-auto' style={{ maxWidth: '18rem' }}>
         <Card.Img variant="top" src={project1} className='p-1'/>
         <Card.Body>
           <Card.Title>Completed E-Commerce Site with backend & admin panel</Card.Title>
