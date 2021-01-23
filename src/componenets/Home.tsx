@@ -2,37 +2,66 @@ import React from 'react';
 import Padma from "../asserts/images/padma/Padma.webp";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import {Link} from "react-scroll";
 
 const Home: React.FC = () => {
   const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
+
+
+
+
   return (
     <React.Fragment>
       {/**Show the animation for medium, large, extra large**/}
       <div id='home' className='text-left my-home d-none d-md-block' style={{minHeight: '75vh'}}>
-        <span style={{
-          marginLeft: `${200 - viewYPosition * 30}px`, top: `${viewYPosition * 20 + 230}px`,
-          fontSize: `${100 - viewYPosition * 20}px`
-        }}>I'm</span>
-        <br/>
-        <strong className='pt-5 mt-5' style={{
-          marginLeft: `${viewYPosition * 20 + 200}px`,
-          top: `${viewYPosition * 20 + 200}px`, fontSize: `${100 - viewYPosition * 20}px`
-        }}>Padma</strong>
         {
-          viewYPosition * 32 < 240 &&
+          viewYPosition < 2.2 &&
+<div>
+          <span style={{
+            marginLeft: `${30 - viewYPosition * 15}vw`, top: `${viewYPosition * 20 + 200}vh`,
+            fontSize: `${10 - viewYPosition * 16}vw`
+          }}>I'm</span>
+          <br/>
+          <strong className='pt-5 mt-5' style={{
+          marginLeft: `${viewYPosition * 15 + 20}vw`,
+          top: `${viewYPosition * 20 + 20}vw`, fontSize: `${8 - viewYPosition * 10}vw`
+        }}>Padma</strong>
+</div>
+        }
+        {
+          viewYPosition < 4 &&
 
-          <img src={Padma} alt="Padma" width={viewYPosition * 32 > 100 ? 280 - viewYPosition * 32 : viewYPosition * 47}
+          <img src={Padma} alt="Padma" width={viewYPosition  > 1 ? 360 - viewYPosition * 80 : viewYPosition * 300}
                className='ml-4' style={{
             borderRadius: `100%`,
-            position: 'absolute', top: `${viewYPosition * 12 + 230}px`
+            left: `${viewYPosition * 20}vw`,
+            top: `${viewYPosition  > 1.1 ? 25.5-viewYPosition * 10: viewYPosition * 13+4}vw`,
+            position: 'absolute',
+            // top: `${viewYPosition * 12}vw`
           }}/>}
-        <span style={{
-          position: 'absolute', left: `${-550 + viewYPosition * 180}px`, top: `${viewYPosition * 13 + 230}px`,
-          fontSize: `${viewYPosition * 32 > 150 ? 1 : 110 - viewYPosition * 16}px`
-        }}>Gnanapriya</span>
 
+        {
+          viewYPosition < 3.25  && viewYPosition > 2
+          &&
+
+          <span style={{
+            position: 'absolute',
+            left: `${-5 + viewYPosition * 10}vw`,
+            top: `${58 - viewYPosition * 15}vw`,
+            fontSize: `${viewYPosition * 32 > 150 ? 1 : 18 - viewYPosition * 3.5}vw`
+          }}>Gnanapriya</span>
+        }
       </div>
 
+      {
+
+        viewYPosition > 1.1 &&
+
+        <Link activeClass="active" className='home' to='home' spy={true} smooth={true} duration={900}>
+          <button style={{ position: 'fixed', right: `10px`, bottom: '60px'}} className='topToBtn'>^
+          </button>
+        </Link>
+      }
 
       {/*<div>*/}
       {/*  <a href="https://www.facebook.com/padma.kalhara/">*/}
