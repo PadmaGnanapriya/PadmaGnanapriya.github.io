@@ -19,6 +19,9 @@ $font-color-dark: #19192f;
       color: $font-color-dark;
     }
   }
+  .about{
+    background: linear-gradient(#a6c7ea, #cedeec, #cedeec);
+  }
 
   .about-dark{
     //@extend .about;
