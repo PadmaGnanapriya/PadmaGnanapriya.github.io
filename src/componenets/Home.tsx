@@ -7,7 +7,6 @@ import {Link} from "react-scroll";
 const Home: React.FC = () => {
   const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
 
-
   return (
     <React.Fragment>
       {/**Show the animation for medium, large, extra large**/}
@@ -49,7 +48,6 @@ const Home: React.FC = () => {
         }
       </div>
 
-
       {/**Show the animation for extra small and small**/}
       <div id='home' className='text-left my-home d-lg-none' style={{minHeight: '40vh'}}>
         {
@@ -88,51 +86,7 @@ const Home: React.FC = () => {
             fontSize: `${viewYPosition * 32 > 150 ? 1 : 20 - viewYPosition * 2.5}vw`
           }}>Gnanapriya</span>
         }
-
       </div>
-
-
-      {/*/!**Show the animation for medium**!/*/}
-      {/*<div id='home' className='text-left my-home d-none d-md-block d-lg-none' style={{minHeight: '40vh'}}>*/}
-      {/*  {*/}
-      {/*    viewYPosition < 2.2 &&*/}
-      {/*    <div>*/}
-      {/*        <br/>*/}
-      {/*      <span style={{*/}
-      {/*        marginLeft: `${30 - viewYPosition * 20}vw`,*/}
-      {/*        top: `${viewYPosition * 20 + 40}vw`,*/}
-      {/*        fontSize: `${viewYPosition<0.8 ? 16 - viewYPosition * 8 : 0.1}vw`*/}
-      {/*      }}>Hi,*/}
-      {/*      </span>*/}
-      {/*        <br/>*/}
-      {/*        <strong className='pt-5 mt-5 text-center' style={{*/}
-      {/*          marginLeft: `${viewYPosition * 13 + 20}vw`,*/}
-      {/*          top: `${viewYPosition > 0.9 ? 0 : viewYPosition * 22 + 20}vw`,*/}
-      {/*          fontSize: `${viewYPosition > 0.9 ? 0 : 12 - viewYPosition * 10}vw`*/}
-      {/*        }}>I'm Padma</strong>*/}
-      {/*    </div>*/}
-      {/*  }{*/}
-      {/*  viewYPosition < 3.5 &&*/}
-      {/*  <img src={Padma} alt="Padma" width={viewYPosition > 1 ? 300 - viewYPosition * 70 : viewYPosition * 190}*/}
-      {/*       className='ml-4' style={{*/}
-      {/*    borderRadius: `100%`,*/}
-      {/*    left: `${viewYPosition * 14}vw`,*/}
-      {/*    top: `${viewYPosition > 1.2 ? 35 -viewYPosition * 10:  viewYPosition * 13 + 14}vw`,*/}
-      {/*    position: 'absolute',*/}
-      {/*  }}/>}*/}
-      {/*  {*/}
-      {/*    viewYPosition < 4 && viewYPosition > 1.5*/}
-      {/*    &&*/}
-      {/*    <span style={{*/}
-      {/*      position: 'absolute',*/}
-      {/*      left: `${viewYPosition * 10}vw`,*/}
-      {/*      top: `${55 - viewYPosition * 10}vh`,*/}
-      {/*      fontSize: `${viewYPosition * 32 > 150 ? 1 : 20 - viewYPosition * 2.5}vw`*/}
-      {/*    }}>Gnanapriya</span>*/}
-      {/*  }*/}
-
-      {/*</div>*/}
-
 
       {/***Arrow key***/}
       {

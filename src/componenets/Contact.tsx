@@ -16,7 +16,8 @@ const Contact: React.FC = () => {
       <Card  data-aos="zoom-in" body id='contact' className='contact my-2 mx-auto' style={{maxWidth:'400px'}}>
         <Row className='mt-1'>
           <Col className='text-left pl-4' xs={12} sm={4}>Email</Col>
-          <Col className='text-left pl-4' xs={12} sm={8}><a href="mailto:padmaisuru@gmail.com">padmaisuru@gmail.com</a></Col>
+          <Col className='text-left pl-4' xs={12} sm={8}>
+            <a href="mailto:padmaisuru@gmail.com">padmaisuru@gmail.com</a></Col>
         </Row>
         <Row className='mt-3'>
           <Col className='text-left pl-4' xs={12} sm={4}>SMS</Col>
@@ -28,7 +29,8 @@ const Contact: React.FC = () => {
       </Row>
         <Row className='mt-3'>
           <Col className='text-left pl-4' xs={12} sm={4}>WhatsApp</Col>
-          <Col className='text-left pl-4' xs={12} sm={8}><a href="https://api.whatsapp.com/send?phone=+94766328189">+94 766 328 189</a></Col>
+          <Col className='text-left pl-4' xs={12} sm={8}>
+            <a href="https://api.whatsapp.com/send?phone=+94766328189">+94 766 328 189</a></Col>
         </Row>
       </Card>
 

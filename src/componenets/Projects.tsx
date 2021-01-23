@@ -27,7 +27,8 @@ const Projects: React.FC = () => {
             React | Redux | GraphQL | Boostrap | SCSS | MongoDb | Apollo | AWS S3 buckets, EC2 instance, Route 53 |
             Express | Git | JIRA</small>
           </Card.Text>
-          <a href='https://www.cominglevel.com/' target='_blank'><Button variant="warning" className='mr-2'>Visit</Button></a>
+          <a href='https://www.cominglevel.com/' target='_blank'>
+            <Button variant="warning" className='mr-2'>Visit</Button></a>
           <OverlayTrigger trigger="click" placement="right" overlay={popoverProject1}>
           <Button variant="success">Source</Button>
           </OverlayTrigger>

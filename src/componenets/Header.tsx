@@ -8,11 +8,25 @@ import {setDarkTheme} from "../store/action/storeAction";
 
 const Header: React.FC = () => {
 
-  const myList: string[] = ["about", "education", "skills", "projects", "achievements", "articles", "contact"]
+  type myListElement = {
+    view: string;
+    value: string;
+  }
+  const myList: myListElement[] = [
+    {view: "Home", value: "home"},
+    {view: "About", value: "about"},
+    {view: "Education", value: "education"}, {view: "skills", value: "skills"},
+    {view: "Projects", value: "projects"},
+    {view: "Achievements", value: "achievements"},
+    {view: "Articles", value: "articles",},
+    {view: "Contact", value: "contact"}
+  ];
 
-  const renderList = () => myList.map((item) => <Nav.Link> <Link key={item} activeClass="active" className={item}
-                                                                 to={item} spy={true} smooth={true}
-                                                                 duration={500}>{item}</Link></Nav.Link>)
+
+  const renderList = () => myList.map((item) => <Nav.Link><Link key={item.view} activeClass="active"
+                                                                className={`${item.value} myLink`} to={item.value}
+                                                                spy={true} smooth={true}
+                                                                duration={500}>{item.view}</Link></Nav.Link>)
 
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
@@ -31,42 +45,21 @@ const Header: React.FC = () => {
               className={isDark ? 'header-dev d-lg-none' : 'header-dev-dark d-lg-none'}>
         <Navbar.Brand><Link activeClass="active" className="home"
                             to="home" spy={true} smooth={true} duration={500}>Padma</Link></Navbar.Brand>
-
-
         <label className="pt-2 pr-2 pl-1 d-md-none" onClick={handleOnThemeChange}>
           <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
         </label>
-
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-
-
-
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-
           </Nav>
           <Nav>
             {renderList()}
-
-            {/*<Nav.Link href="#about">About</Nav.Link>*/}
-            {/*<Nav.Link href="#education">Education</Nav.Link>*/}
-            {/*<Nav.Link href="#skills">Skills</Nav.Link>*/}
-            {/*<Nav.Link href="#projects">Projects</Nav.Link>*/}
-            {/*<Nav.Link href="#achievements">Achievements</Nav.Link>*/}
-            {/*<Nav.Link href="#articles">Articles</Nav.Link>*/}
-            {/*<Nav.Link href="#contact">Contact</Nav.Link>*/}
-
           </Nav>
           <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>
             <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
           </label>
         </Navbar.Collapse>
-
-
       </Navbar>
-
-
-
     </React.Fragment>
   );
 }

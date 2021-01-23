@@ -64,7 +64,7 @@ $font-color-dark: #19192f;
   .projects-dark {
     @extend .projects;
     background: $background-color-dark;
-    color: $font-color-light;
+    color: $font-color-dark;
   }
 
   .achievements {
@@ -126,7 +126,7 @@ $font-color-dark: #19192f;
   .contact-dark {
     @extend .contact;
     background: $background-color-dark;
-    color: $font-color-light;
+    color: $font-color-dark;
   }
 
 }
