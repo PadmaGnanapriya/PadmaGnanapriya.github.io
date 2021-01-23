@@ -8,42 +8,38 @@ const Home: React.FC = () => {
   const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
 
 
-
-
   return (
     <React.Fragment>
       {/**Show the animation for medium, large, extra large**/}
-      <div id='home' className='text-left my-home d-none d-md-block' style={{minHeight: '75vh'}}>
+      <div id='home' className='text-left my-home d-none d-lg-block' style={{minHeight: '75vh'}}>
         {
           viewYPosition < 2.2 &&
-<div>
-          <span style={{
-            marginLeft: `${30 - viewYPosition * 15}vw`, top: `${viewYPosition * 20 + 200}vh`,
-            fontSize: `${10 - viewYPosition * 16}vw`
-          }}>I'm</span>
-          <br/>
-          <strong className='pt-5 mt-5' style={{
-          marginLeft: `${viewYPosition * 15 + 20}vw`,
-          top: `${viewYPosition * 20 + 20}vw`, fontSize: `${8 - viewYPosition * 10}vw`
-        }}>Padma</strong>
-</div>
-        }
+          <div>
+            <span style={{
+              marginLeft: `${30 - viewYPosition * 15}vw`,
+              top: `${viewYPosition * 20 + 200}vh`,
+              fontSize: `${10 - viewYPosition * 16}vw`
+            }}>I'm
+            </span>
+              <br/>
+              <strong className='pt-5 mt-5' style={{
+                marginLeft: `${viewYPosition * 15 + 20}vw`,
+                top: `${viewYPosition * 20 + 20}vw`,
+                fontSize: `${8 - viewYPosition * 10}vw`
+              }}>Padma</strong>
+          </div>
+        }{
+        viewYPosition < 4 &&
+        <img src={Padma} alt="Padma" width={viewYPosition > 1 ? 360 - viewYPosition * 80 : viewYPosition * 300}
+             className='ml-4' style={{
+          borderRadius: `100%`,
+          left: `${viewYPosition * 20}vw`,
+          top: `${viewYPosition > 1.1 ? 25.5 - viewYPosition * 10 : viewYPosition * 13 + 4}vw`,
+          position: 'absolute',
+        }}/>}
         {
-          viewYPosition < 4 &&
-
-          <img src={Padma} alt="Padma" width={viewYPosition  > 1 ? 360 - viewYPosition * 80 : viewYPosition * 300}
-               className='ml-4' style={{
-            borderRadius: `100%`,
-            left: `${viewYPosition * 20}vw`,
-            top: `${viewYPosition  > 1.1 ? 25.5-viewYPosition * 10: viewYPosition * 13+4}vw`,
-            position: 'absolute',
-            // top: `${viewYPosition * 12}vw`
-          }}/>}
-
-        {
-          viewYPosition < 3.25  && viewYPosition > 2
+          viewYPosition < 3.25 && viewYPosition > 2
           &&
-
           <span style={{
             position: 'absolute',
             left: `${-5 + viewYPosition * 10}vw`,
@@ -53,15 +49,59 @@ const Home: React.FC = () => {
         }
       </div>
 
+
+
+      {/**Show the animation for etra small**/}
+      <div id='home' className='text-left my-home d-md-none' style={{minHeight: '40vh'}}>
+        {
+          viewYPosition < 2.2 &&
+          <div>
+              <br/>
+            <span style={{
+              marginLeft: `${30 - viewYPosition * 20}vw`,
+              top: `${viewYPosition * 20 + 40}vw`,
+              fontSize: `${viewYPosition<0.8 ? 16 - viewYPosition * 8 : 0.1}vw`
+            }}>Hi,
+            </span>
+              <br/>
+              <strong className='pt-5 mt-5 text-center' style={{
+                marginLeft: `${viewYPosition * 13 + 20}vw`,
+                top: `${viewYPosition * 22 + 20}vw`,
+                fontSize: `${14 - viewYPosition * 10}vw`
+              }}>I'm Padma</strong>
+          </div>
+        }{
+        viewYPosition < 3.5 &&
+        <img src={Padma} alt="Padma" width={viewYPosition > 1 ? 300 - viewYPosition * 70 : viewYPosition * 190}
+             className='ml-4' style={{
+          borderRadius: `100%`,
+          left: `${viewYPosition * 10}vw`,
+          top: `${viewYPosition > 1 ? 35 -viewYPosition * 10:  viewYPosition * 13 + 14}vw`,
+          position: 'absolute',
+        }}/>}
+        {
+          viewYPosition < 4 && viewYPosition > 1.5
+          &&
+          <span style={{
+            position: 'absolute',
+            left: `${viewYPosition * 10}vw`,
+            top: `${55 - viewYPosition * 10}vh`,
+            fontSize: `${viewYPosition * 32 > 150 ? 1 : 20 - viewYPosition * 2.5}vw`
+          }}>Gnanapriya</span>
+        }
+
+      </div>
+
+
+      {/***Arrow key***/}
       {
-
         viewYPosition > 1.1 &&
-
         <Link activeClass="active" className='home' to='home' spy={true} smooth={true} duration={900}>
-          <button style={{ position: 'fixed', right: `10px`, bottom: '60px'}} className='topToBtn'>^
-          </button>
+            <button style={{position: 'fixed', right: `10px`, bottom: '60px'}} className='topToBtn'>^
+            </button>
         </Link>
       }
+
 
       {/*<div>*/}
       {/*  <a href="https://www.facebook.com/padma.kalhara/">*/}
