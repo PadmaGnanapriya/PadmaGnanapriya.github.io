@@ -1,308 +1,113 @@
 import React from 'react';
 import {Col, Image, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
-import react from '../asserts/images/react.png';
-import android from '../asserts/images/android.png';
-import apollo from '../asserts/images/apollo.png';
-import bootstrap from '../asserts/images/bootstrap.png';
-import graphql from '../asserts/images/graphql.png';
-import gradle from '../asserts/images/gradle.png';
-import androidStudio from '../asserts/images/androidstudio.png';
-import amazon from '../asserts/images/aws.png';
-import colab from '../asserts/images/colab.png';
-import express from '../asserts/images/express.png';
-import firebase from '../asserts/images/firebase.png';
-import hibernate from '../asserts/images/hibernate.png';
-import intelijIDEA from '../asserts/images/intelij.png';
-import java from '../asserts/images/java.png';
-import jira from '../asserts/images/jira.png';
-import jQuery from '../asserts/images/jQuery.png';
-import jupiter from '../asserts/images/jupiter.png';
-import kotlin from '../asserts/images/kotlin.png';
-import maven from '../asserts/images/maven.png';
-import mysql from '../asserts/images/mysql.png';
-import nginx from '../asserts/images/nginx.png';
-import npm from '../asserts/images/npm.png';
-import php from '../asserts/images/php.png';
-import pycharm from '../asserts/images/pycharm.png';
-import scss from '../asserts/images/scss.png';
-import selenium from '../asserts/images/selenium.png';
-import slack from '../asserts/images/slack.png';
-import springBoot from '../asserts/images/springboot.png';
-import web from '../asserts/images/web.png';
-import webstorm from '../asserts/images/webstorm.png';
-import typescript from '../asserts/images/typescript.png';
-import python from '../asserts/images/python.png';
-import mongodb from '../asserts/images/mongo.png';
-import redux from '../asserts/images/redux.png';
-import node from '../asserts/images/node.png';
-import javafx from '../asserts/images/javafx.png';
-import git from '../asserts/images/git.png';
-import github from '../asserts/images/github.png';
-import visualCode from '../asserts/images/visualcode.png';
+import react from '../asserts/images/react.webp';
+import android from '../asserts/images/android.webp';
+import apollo from '../asserts/images/apollo.webp';
+import bootstrap from '../asserts/images/bootstrap.webp';
+import graphql from '../asserts/images/graphql.webp';
+import gradle from '../asserts/images/gradle.webp';
+import androidStudio from '../asserts/images/androidstudio.webp';
+import amazon from '../asserts/images/aws.webp';
+import colab from '../asserts/images/colab.webp';
+import express from '../asserts/images/express.webp';
+import firebase from '../asserts/images/firebase.webp';
+import hibernate from '../asserts/images/hibernate.webp';
+import intelijIDEA from '../asserts/images/intelij.webp';
+import java from '../asserts/images/java.webp';
+import jira from '../asserts/images/jira.webp';
+import jQuery from '../asserts/images/jQuery.webp';
+import jupiter from '../asserts/images/jupiter.webp';
+import kotlin from '../asserts/images/kotlin.webp';
+import maven from '../asserts/images/maven.webp';
+import mysql from '../asserts/images/mysql.webp';
+import nginx from '../asserts/images/nginx.webp';
+import npm from '../asserts/images/npm.webp';
+import php from '../asserts/images/php.webp';
+import pycharm from '../asserts/images/pycharm.webp';
+import scss from '../asserts/images/scss.webp';
+import selenium from '../asserts/images/selenium.webp';
+import slack from '../asserts/images/slack.webp';
+import springBoot from '../asserts/images/springboot.webp';
+import web from '../asserts/images/web.webp';
+import webstorm from '../asserts/images/webstorm.webp';
+import typescript from '../asserts/images/typescript.webp';
+import python from '../asserts/images/python.webp';
+import mongodb from '../asserts/images/mongo.webp';
+import redux from '../asserts/images/redux.webp';
+import node from '../asserts/images/node.webp';
+import javafx from '../asserts/images/javafx.webp';
+import git from '../asserts/images/git.webp';
+import visualCode from '../asserts/images/visualcode.webp';
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
-// import flutter from './images/flutter.png';
+// import flutter from './images/flutter.webp';
 
 const Skills: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
+  type skill = {
+    tooltip: string;
+    image: string;
+  }
+
+  const skills: skill[] = [
+    {tooltip: "Java", image: java},
+    {tooltip: "Html 5, CSS 3, EcmaScript 6", image: web},
+    {tooltip: "TypeScript", image: typescript},
+    {tooltip: "PHP", image: php},
+    {tooltip: "Python 3", image: python},
+    {tooltip: "Kotlin", image: kotlin},
+    {tooltip: "MongoDb", image: mongodb},
+    {tooltip: "MySQL", image: mysql},
+    {tooltip: "React JS", image: react},
+    {tooltip: "Redux", image: redux},
+    {tooltip: "GraphQL", image: graphql},
+    {tooltip: "Apollo Server", image: apollo},
+    {tooltip: "Bootstrap 4", image: bootstrap},
+    {tooltip: "SCSS", image: scss},
+    {tooltip: "jQuery", image: jQuery},
+    {tooltip: "Express JS", image: express},
+    {tooltip: "Node Js", image: node},
+    {tooltip: "Nginx", image: nginx},
+    {tooltip: "Amazon web services", image: amazon},
+    {tooltip: "Firebase", image: firebase},
+    {tooltip: "Selenium", image: selenium},
+    {tooltip: "JavaFX", image: javafx},
+    {tooltip: "Hibernate", image: hibernate},
+    {tooltip: "SpringBoot", image: springBoot},
+    {tooltip: "Android", image: android},
+    {tooltip: "Node Package Manager", image: npm},
+    {tooltip: "Gradle", image: gradle},
+    {tooltip: "Maven", image: maven},
+    {tooltip: "Git, github", image: git},
+    {tooltip: "Google Colabs", image: colab},
+    {tooltip: "Jupiter notebook, jupiter lab", image: jupiter},
+  ]
+
+  const renderSkills = () => skills.map((skill: skill, index: number) =>
+    <Col data-aos="zoom-in-up">
+      <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
+        {skill.tooltip}</Tooltip>}><img src={skill.image} alt='Language' className='py-2 languageIcon' width={170}/>
+      </OverlayTrigger>
+    </Col>)
 
 
   return (
     <div className={isDark ? 'skills-dark py-4' : 'skills py-4'}>
       <h1 id='skills' className='pt-5'>Skills</h1>
       <Row className='m-0'>
-        <Col>
-          <OverlayTrigger
-            placement="bottom"
-            delay={{show: 500, hide: 0}}
-            overlay={<Tooltip id="java">Java</Tooltip>}>
-            <Image src={java} alt='Language' className='py-2 languageIcon' width={170}/>
-          </OverlayTrigger>
-
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="web">Html 5, CSS 3, EcmaScript 6</Tooltip>}
-        ><img src={web} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="ts">TypeScript</Tooltip>}
-        ><img src={typescript} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="php">PHP</Tooltip>}
-        ><img src={php} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="python">Python 3</Tooltip>}
-        ><img src={python} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="kotlin">Kotlin</Tooltip>}
-        ><img src={kotlin} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="mongodb">MongoDb</Tooltip>}
-        ><img src={mongodb} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="mysql">MySQL</Tooltip>}
-        ><img src={mysql} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="react">React JS</Tooltip>}
-        ><img src={react} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="redux">Redux</Tooltip>}
-        ><img src={redux} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="graphql">GraphQL</Tooltip>}
-        ><img src={graphql} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="apollo">Apollo Server</Tooltip>}
-        ><img src={apollo} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="bootstrap">Bootstrap 4</Tooltip>}
-        ><img src={bootstrap} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="scss">SCSS</Tooltip>}
-        ><img src={scss} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="jQuery">jQuery</Tooltip>}>
-          <img src={jQuery} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="express">Express JS</Tooltip>}>
-          <img src={express} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="node">Node Js</Tooltip>}>
-          <img src={node} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="nginx">Nginx</Tooltip>}>
-          <img src={nginx} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="amazon">Amazon web services</Tooltip>}>
-          <img src={amazon} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="firebase">Firebase</Tooltip>}>
-          <img src={firebase} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        {/*<Col><OverlayTrigger
-            placement="bottom"
-            delay={{ show: 500, hide: 0 }}
-            overlay={<Tooltip id="java"></Tooltip>}
-          ><img src={angular} alt='Language' className='py-2 languageIcon' width={170}/>
-          </OverlayTrigger>
-</Col>*/}
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="selenium">Selenium</Tooltip>}>
-          <img src={selenium} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="javafx">JavaFX</Tooltip>}>
-          <img src={javafx} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="hibernate">Hibernate</Tooltip>}>
-          <img src={hibernate} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="springBoot">SpringBoot</Tooltip>}>
-          <img src={springBoot} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="android">Android</Tooltip>}
-        ><img src={android} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        {/*<Col><OverlayTrigger
-            placement="bottom"
-            delay={{ show: 500, hide: 0 }}
-            overlay={<Tooltip id="java"></Tooltip>}
-          ><img src={flutter} alt='Language' className='py-2 languageIcon' width={170}/>
-          </OverlayTrigger>
-</Col>*/}
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="colab">Google Colabs</Tooltip>}>
-          <img src={colab} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="jupiter">Jupiter notebook, jupiter lab</Tooltip>}>
-          <img src={jupiter} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="npm">Node Package Manager</Tooltip>}>
-          <img src={npm} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="gradle">Gradle</Tooltip>}>
-          <img src={gradle} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="maven">Maven</Tooltip>}>
-          <img src={maven} alt='Language' className='py-2 languageIcon' width={170}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="git">Git version control system</Tooltip>}>
-          <img src={git} alt='Language' className='py-2 languageIcon' width={85}/>
-        </OverlayTrigger>
-        </Col>
-        <Col><OverlayTrigger
-          placement="bottom"
-          delay={{show: 500, hide: 0}}
-          overlay={<Tooltip id="github">GitHub(cloud-based hosting service)</Tooltip>}>
-          <img src={github} alt='Language' className='py-2 languageIcon' width={85}/>
-        </OverlayTrigger>
-        </Col>
-
+        {
+          renderSkills()
+        }
       </Row>
       <Row className='m-0 d-none d-md-flex skills'>
-        <Col><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={androidStudio} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={jira} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col><Image src={slack} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-
-
+        <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={androidStudio} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={jira} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={slack} alt='Language' className='py-2 languageIcon' width={85}/></Col>
       </Row>
     </div>
   );

@@ -5,6 +5,8 @@ import Switch from "react-bootstrap/Switch";
 import {setDarkTheme, setViewYPosition} from "../store/action/storeAction";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import {Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
+import hibernate from "../asserts/images/hibernate.png";
 
 
 const SlideNav: React.FC = () => {

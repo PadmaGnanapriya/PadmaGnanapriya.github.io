@@ -2,6 +2,9 @@ import React from 'react';
 import {Card, Col, Row} from "react-bootstrap";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Contact: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
@@ -10,7 +13,7 @@ const Contact: React.FC = () => {
     <div className={isDark?'contact-dark py-3 px-3 px-md-4 px-lg-5': 'contact py-3 px-3 px-md-4 px-lg-5'}>
 
     <h1 className='pt-5 mt-2'>Contact me</h1>
-      <Card body id='contact' className='contact my-2 mx-auto' style={{maxWidth:'400px'}}>
+      <Card  data-aos="zoom-in" body id='contact' className='contact my-2 mx-auto' style={{maxWidth:'400px'}}>
         <Row className='mt-1'>
           <Col className='text-left pl-4' xs={12} sm={4}>Email</Col>
           <Col className='text-left pl-4' xs={12} sm={8}><a href="mailto:padmaisuru@gmail.com">padmaisuru@gmail.com</a></Col>
