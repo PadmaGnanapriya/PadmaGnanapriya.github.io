@@ -13,8 +13,8 @@ const Education: React.FC = () => {
       <h1 id='education' className='pt-5 mt-2'>Education</h1>
 
       <div data-aos="fade-up">
-        <a href='https://www.kln.ac.lk/' target='_blank' rel="noopener"><h3 className='text-left'>
-          University of Kelaniya</h3></a>
+        <a href='https://www.kln.ac.lk/' target='_blank' rel="noreferrer"><h2 className='text-left'>
+          University of Kelaniya</h2></a>
         <p className='text-left'>Since 2019 February I am learning software engineering. Currently in Level 2
           maintaining the GPA at 3.33 out of 4.0
         </p>
@@ -22,7 +22,7 @@ const Education: React.FC = () => {
       </div>
 
       <div data-aos="fade-up">
-        <a href='https://www.ijse.lk/' target='_blank' rel="noopener"><h3 className='text-left'>IJSE</h3></a>
+        <a href='https://www.ijse.lk/' target='_blank' rel="noreferrer"><h2 className='text-left'>IJSE</h2></a>
         <p className='text-left'>I followed the CMJD(Comprehensive Master Java Developer) Professional diploma.
           I learnt modern software design and developing methodologies (architectural designs and using depth of
           object orientation) in java, JavaFX, hibernate, Angular, NodeJs, etc.</p>
@@ -30,8 +30,8 @@ const Education: React.FC = () => {
       </div>
 
       <div data-aos="fade-up">
-        <a href='https://www.mahindacollege.lk/' target='_blank' rel="noopener"><h3 className='text-left'>
-          Mahinda College Galle</h3>
+        <a href='https://www.mahindacollege.lk/' target='_blank' rel="noreferrer"><h2 className='text-left'>
+          Mahinda College Galle</h2>
         </a>
         <p className='text-left'> I did my O/Ls and A/Ls at Mahinda College, Galle. I got 7A s and 2B s for my OLs.
           In 2017 I faced for A/L
@@ -46,8 +46,8 @@ const Education: React.FC = () => {
       </div>
 
       <div data-aos="fade-up">
-        <a href='https://www.facebook.com/polpagodadharmapalacollege'><h3 className='text-left'>Polpagoda Darmapala MV.
-        </h3></a>
+        <a href='https://www.facebook.com/polpagodadharmapalacollege'><h2 className='text-left'>Polpagoda Darmapala MV.
+        </h2></a>
         <p className='text-left'>I passed the grade 5 scholarship exam at Polpogoda Dharmapala MV and I entered to
           Mahinda College Galle.</p>
       </div>

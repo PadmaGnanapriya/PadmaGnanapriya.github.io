@@ -79,7 +79,7 @@ const Articles: React.FC = () => {
     <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to navigate to the article</Tooltip>}>
-        <a key={index} href={item.link} target='_blank' rel="noopener">
+        <a key={index} href={item.link} target='_blank' rel="noreferrer">
           <Card body className='m-1 article text-left'><span>{item.title}</span></Card></a>
       </OverlayTrigger>
     </Col>);

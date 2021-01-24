@@ -25,8 +25,10 @@ const Projects: React.FC = () => {
     <Popover id="popover-basic">
       <Popover.Title as="h3">E-commerce site</Popover.Title>
       <Popover.Content>
-        <a href='https://github.com/PadmaGnanapriya/p-redux-store' target='_blank'>React frontend</a><br/>
-        <a href='https://github.com/PadmaGnanapriya/type-graph-express-api' target='_blank'>GraphQL backend</a>
+        <a href='https://github.com/PadmaGnanapriya/p-redux-store' target='_blank' rel="noreferrer">
+          React frontend</a><br/>
+        <a href='https://github.com/PadmaGnanapriya/type-graph-express-api' target='_blank' rel="noreferrer">
+          GraphQL backend</a>
       </Popover.Content>
     </Popover>
   );
@@ -87,7 +89,7 @@ const Projects: React.FC = () => {
           <Card.Title>{project.title}</Card.Title>
           <Card.Text><small>{project.description}</small>
           </Card.Text>
-          <a href={project.viewLink} target='_blank' rel="noopener">
+          <a href={project.viewLink} target='_blank' rel="noreferrer">
             <Button variant="warning" className='mr-2'>Visit</Button></a>
           {
             project.overlay &&
@@ -97,7 +99,7 @@ const Projects: React.FC = () => {
           }
           {
             !project.overlay &&
-            <a href={project.sourceCodeLink || ''} target='_blank' rel="noopener">
+            <a href={project.sourceCodeLink || ''} target='_blank' rel="noreferrer">
                 <Button variant="success" className='mr-2'>Source</Button></a>
           }
         </Card.Body>
