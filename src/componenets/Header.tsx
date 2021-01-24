@@ -13,9 +13,9 @@ const Header: React.FC = () => {
     value: string;
   }
   const myList: myListElement[] = [
-    {view: "Home", value: "home"},
     {view: "About", value: "about"},
-    {view: "Education", value: "education"}, {view: "skills", value: "skills"},
+    {view: "Education", value: "education"},
+    {view: "Skills", value: "skills"},
     {view: "Projects", value: "projects"},
     {view: "Achievements", value: "achievements"},
     {view: "Articles", value: "articles",},
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
-          <Nav>
+          <Nav className='my-nav-list'>
             {renderList()}
           </Nav>
           <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>

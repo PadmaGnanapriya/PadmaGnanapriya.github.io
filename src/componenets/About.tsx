@@ -12,7 +12,7 @@ const About: React.FC = () => {
 
 
   return (
-    <div className={isDark ? 'about-dark py-3 px-3 px-md-4 px-lg-5' : 'about py-3 px-3 px-md-4 px-lg-5'}
+    <div className={isDark ? 'about-dark py-3 px-3 px-md-4 px-lg-5' : 'about-light about py-3 px-3 px-md-4 px-lg-5'}
          data-aos="zoom-in-up"
          style={{borderRadius: `${100-viewYPosition*20}% ${100-viewYPosition*20}% 0% 0%`}}
     >

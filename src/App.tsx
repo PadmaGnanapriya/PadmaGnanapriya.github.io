@@ -13,7 +13,7 @@ import Footer from "./componenets/Footer";
 import Skills from "./componenets/Skills";
 import Achievements from "./componenets/Achievements";
 import Headroom from "react-headroom";
-import "./../src/asserts/main.scss";
+import "./asserts/style-sheets/main.scss";
 import {useSelector} from "react-redux";
 import {RootState} from "./store/reducer/myReducer";
 
@@ -39,11 +39,6 @@ function App() {
             <Achievements/>
             <Articles/>
             <Contact/>
-
-        </Col>
-      </Row>
-      <Row className='m-0'>
-        <Col sm={12} xs={12} className='p-0'>
           <Footer/>
         </Col>
       </Row>

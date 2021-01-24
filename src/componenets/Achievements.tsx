@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Col, Row} from "react-bootstrap";
+import {Card, Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import AOS from "aos";
@@ -43,8 +43,13 @@ const Achievements: React.FC = () => {
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
     <Col data-aos={index%2===1? "fade-up-left": "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
-      <a key={index} href={item.link} target='_blank'>
-      <Card body className='m-1 text-left achievement'><span>{item.title}</span></Card></a></Col>);
+      <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
+        Click me to show the certificate</Tooltip>}>
+        <a key={index} href={item.link} target='_blank'>
+          <Card body className='m-1 text-left achievement'><span>{item.title}</span></Card></a>
+      </OverlayTrigger>
+
+    </Col>);
 
   return (
     <div className={isDark?'achievements-dark py-3 px-3 px-md-4 px-lg-5': 'achievements py-3 px-3 px-md-4 px-lg-5'}>

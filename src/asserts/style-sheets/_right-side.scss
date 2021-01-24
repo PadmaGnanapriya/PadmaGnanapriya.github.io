@@ -1,43 +1,38 @@
-$background-color-light: #cedeec;
-$background-color-dark: #484e5d;
-$font-color-light: white;
-$font-color-dark: #19192f;
-
+@import "./common/colors";
 
 .right-side {
   font-size: large;
   background: $background-color-light;
   color: $font-color-dark;
 
-  .header-dev{
-    a {
-      color: $font-color-light;
-    }
-  }
-  .header-dev-dark{
-    a {
-      color: $font-color-dark;
-    }
-  }
-  .about{
+
+  //---------------------------------------------------
+
+  .about-light {
     background: linear-gradient(#a6c7ea, #cedeec, #cedeec);
   }
 
-  .about-dark{
-    //@extend .about;
+  .about-dark {
     background: $background-color-dark;
     color: $font-color-light;
   }
 
-  .education-dark{
-    //@extend .education;
+
+
+  //---------------------------------------------------
+
+  .education-dark {
     background: $background-color-dark;
     color: $font-color-light;
-    a{
+
+    a {
       color: $font-color-light;
     }
   }
 
+
+
+  //---------------------------------------------------
 
   .skills {
     .languageIcon:hover {
@@ -55,6 +50,9 @@ $font-color-dark: #19192f;
   }
 
 
+
+  //---------------------------------------------------
+
   .projects {
     .proj:hover {
       transform: scale(1.02);
@@ -67,21 +65,30 @@ $font-color-dark: #19192f;
   .projects-dark {
     @extend .projects;
     background: $background-color-dark;
-    color: $font-color-dark;
-  }
-
-  .achievements {
-    a:hover{
-      text-decoration: none;
-    }
-    span{
+    color: $font-color-light;
+    .proj{
       color: $font-color-dark;
     }
+  }
+
+
+  //---------------------------------------------------
+
+  .achievements {
+    a:hover {
+      text-decoration: none;
+    }
+
+    span {
+      color: $font-color-dark;
+    }
+
     .achievement:hover {
       transform: scaleY(1.15);
       -webkit-transition: all .5s;
       -moz-transition: all .5s;
       transition: all .5s ease-in-out;
+
       span {
         font-weight: 700;
       }
@@ -95,14 +102,17 @@ $font-color-dark: #19192f;
   }
 
 
+  //---------------------------------------------------
 
   .articles {
-    a:hover{
+    a:hover {
       text-decoration: none;
     }
-    span{
+
+    span {
       color: $font-color-dark;
     }
+
     .article:hover {
       transform: scaleY(1.15);
       -webkit-transition: all .5s;
@@ -121,15 +131,22 @@ $font-color-dark: #19192f;
     color: $font-color-light;
   }
 
+
+
+  //---------------------------------------------------
+
   .contact {
     a {
       color: $font-color-dark;
     }
   }
+
   .contact-dark {
     @extend .contact;
     background: $background-color-dark;
-    color: $font-color-dark;
+    color: $font-color-light;
+    #contact{
+      color: $font-color-dark;
+    }
   }
-
 }

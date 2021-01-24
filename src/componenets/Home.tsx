@@ -1,5 +1,5 @@
 import React from 'react';
-import Padma from "../asserts/images/padma/Padma.webp";
+import Padma from "../asserts/image/padma/Padma.webp";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import {Link} from "react-scroll";

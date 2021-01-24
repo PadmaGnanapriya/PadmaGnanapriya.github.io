@@ -1,46 +1,46 @@
 import React from 'react';
 import {Col, Image, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
-import react from '../asserts/images/react.webp';
-import android from '../asserts/images/android.webp';
-import apollo from '../asserts/images/apollo.webp';
-import bootstrap from '../asserts/images/bootstrap.webp';
-import graphql from '../asserts/images/graphql.webp';
-import gradle from '../asserts/images/gradle.webp';
-import androidStudio from '../asserts/images/androidstudio.webp';
-import amazon from '../asserts/images/aws.webp';
-import colab from '../asserts/images/colab.webp';
-import express from '../asserts/images/express.webp';
-import firebase from '../asserts/images/firebase.webp';
-import hibernate from '../asserts/images/hibernate.webp';
-import intelijIDEA from '../asserts/images/intelij.webp';
-import java from '../asserts/images/java.webp';
-import jira from '../asserts/images/jira.webp';
-import jQuery from '../asserts/images/jQuery.webp';
-import jupiter from '../asserts/images/jupiter.webp';
-import kotlin from '../asserts/images/kotlin.webp';
-import maven from '../asserts/images/maven.webp';
-import mysql from '../asserts/images/mysql.webp';
-import nginx from '../asserts/images/nginx.webp';
-import npm from '../asserts/images/npm.webp';
-import php from '../asserts/images/php.webp';
-import pycharm from '../asserts/images/pycharm.webp';
-import scss from '../asserts/images/scss.webp';
-import selenium from '../asserts/images/selenium.webp';
-import slack from '../asserts/images/slack.webp';
-import springBoot from '../asserts/images/springboot.webp';
-import web from '../asserts/images/web.webp';
-import webstorm from '../asserts/images/webstorm.webp';
-import typescript from '../asserts/images/typescript.webp';
-import python from '../asserts/images/python.webp';
-import mongodb from '../asserts/images/mongo.webp';
-import redux from '../asserts/images/redux.webp';
-import node from '../asserts/images/node.webp';
-import javafx from '../asserts/images/javafx.webp';
-import git from '../asserts/images/git.webp';
-import visualCode from '../asserts/images/visualcode.webp';
+import react from '../asserts/image/skills/react.webp';
+import android from '../asserts/image/skills/android.webp';
+import apollo from '../asserts/image/skills/apollo.webp';
+import bootstrap from '../asserts/image/skills/bootstrap.webp';
+import graphql from '../asserts/image/skills/graphql.webp';
+import gradle from '../asserts/image/skills/gradle.webp';
+import androidStudio from '../asserts/image/skills/androidstudio.webp';
+import amazon from '../asserts/image/skills/aws.webp';
+import colab from '../asserts/image/skills/colab.webp';
+import express from '../asserts/image/skills/express.webp';
+import firebase from '../asserts/image/skills/firebase.webp';
+import hibernate from '../asserts/image/skills/hibernate.webp';
+import intelijIDEA from '../asserts/image/skills/intelij.webp';
+import java from '../asserts/image/skills/java.webp';
+import jira from '../asserts/image/skills/jira.webp';
+import jQuery from '../asserts/image/skills/jQuery.webp';
+import jupiter from '../asserts/image/skills/jupiter.webp';
+import kotlin from '../asserts/image/skills/kotlin.webp';
+import maven from '../asserts/image/skills/maven.webp';
+import mysql from '../asserts/image/skills/mysql.webp';
+import nginx from '../asserts/image/skills/nginx.webp';
+import npm from '../asserts/image/skills/npm.webp';
+import php from '../asserts/image/skills/php.webp';
+import pycharm from '../asserts/image/skills/pycharm.webp';
+import scss from '../asserts/image/skills/scss.webp';
+import selenium from '../asserts/image/skills/selenium.webp';
+import slack from '../asserts/image/skills/slack.webp';
+import springBoot from '../asserts/image/skills/springboot.webp';
+import web from '../asserts/image/skills/web.webp';
+import webstorm from '../asserts/image/skills/webstorm.webp';
+import typescript from '../asserts/image/skills/typescript.webp';
+import python from '../asserts/image/skills/python.webp';
+import mongodb from '../asserts/image/skills/mongo.webp';
+import redux from '../asserts/image/skills/redux.webp';
+import node from '../asserts/image/skills/node.webp';
+import javafx from '../asserts/image/skills/javafx.webp';
+import git from '../asserts/image/skills/git.webp';
+import visualCode from '../asserts/image/skills/visualcode.webp';
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
-// import flutter from './images/flutter.webp';
+// import flutter from './skills/flutter.webp';
 
 const Skills: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
@@ -100,6 +100,8 @@ const Skills: React.FC = () => {
           renderSkills()
         }
       </Row>
+      <h1 className='pt-5'>Favourite Apps</h1>
+
       <Row className='m-0 d-none d-md-flex skills'>
         <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={85}/></Col>
         <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
