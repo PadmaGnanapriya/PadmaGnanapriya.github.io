@@ -82,12 +82,12 @@ const Projects: React.FC = () => {
   const renderProjects = () => myProjectList.map((project: myProject) =>
     <Col xs={12} sm={6} xl={4}>
       <Card  data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '18rem', minHeight: '28rem'}}>
-        <Card.Img variant="top" src={project.image} className='p-1'/>
+        <Card.Img variant="top" src={project.image} className='p-1' alt='project'/>
         <Card.Body>
           <Card.Title>{project.title}</Card.Title>
           <Card.Text><small>{project.description}</small>
           </Card.Text>
-          <a href={project.viewLink} target='_blank'>
+          <a href={project.viewLink} target='_blank' rel="noopener">
             <Button variant="warning" className='mr-2'>Visit</Button></a>
           {
             project.overlay &&
@@ -97,9 +97,8 @@ const Projects: React.FC = () => {
           }
           {
             !project.overlay &&
-            <a href={project.sourceCodeLink || ''} target='_blank'>
+            <a href={project.sourceCodeLink || ''} target='_blank' rel="noopener">
                 <Button variant="success" className='mr-2'>Source</Button></a>
-
           }
         </Card.Body>
       </Card>

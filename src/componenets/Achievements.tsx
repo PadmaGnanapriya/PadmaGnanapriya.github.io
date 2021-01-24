@@ -45,7 +45,7 @@ const Achievements: React.FC = () => {
     <Col data-aos={index%2===1? "fade-up-left": "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to show the certificate</Tooltip>}>
-        <a key={index} href={item.link} target='_blank'>
+        <a key={index} href={item.link} target='_blank' rel="noopener">
           <Card body className='m-1 text-left achievement'><span>{item.title}</span></Card></a>
       </OverlayTrigger>
 

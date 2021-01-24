@@ -53,7 +53,6 @@ const SlideNav: React.FC = () => {
         <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
       </label>
       <nav>
-        {/*<ul>*/}
         <ul className={isDark ? 'list-dark' : 'list-light'}>
           {renderList()}
         </ul>
