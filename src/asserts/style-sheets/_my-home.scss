@@ -1,9 +1,30 @@
-.my-home{
-  img{
+.my-home {
+  img {
     z-index: 100;
   }
 
-  .topToBtn{
+  .topToBtn {
     z-index: 300000 !important;
   }
+}
+
+.p-icon {
+
+  a:hover {
+    .my-icon {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 3s infinite;
+      //animation: dash 7s linear forwards;
+    }
+
+  }
+
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 100;
+    }
+  }
+
 }
