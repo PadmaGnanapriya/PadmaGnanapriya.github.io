@@ -9,10 +9,25 @@ import {configureStore} from "./store";
 
 const store = configureStore();
 
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  alert("Sorry. This option is disabled by the developer.");
+});
+
+document.onkeydown = function(e) {
+  if(e.keyCode === 123) {return false;}
+  if(e.ctrlKey && e.shiftKey && e.keyCode === 73){return false;}
+  if(e.ctrlKey && e.shiftKey && e.keyCode === 74){return false;}
+  if(e.ctrlKey && e.keyCode === 85){return false;}
+  if(e.ctrlKey && e.shiftKey && 67){return false;}
+  if(e.ctrlKey && e.keyCode === 83){return false;}
+  if(e.ctrlKey && e.keyCode === 80){return false;}}
+document.oncontextmenu = function(){return false;};
+document.onselectstart= function() {return false;};
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-
       <App/>
     </Provider>
   </React.StrictMode>,
