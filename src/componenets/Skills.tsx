@@ -106,7 +106,8 @@ const Skills: React.FC = () => {
         <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={85}/></Col>
         <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
         <Col data-aos="flip-up"><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={85}/></Col>
-        <Col data-aos="flip-up"><Image src={androidStudio} alt='Language' className='py-2 languageIcon' width={85}/></Col>
+        <Col data-aos="flip-up"><Image src={androidStudio} alt='Language' className='py-2 languageIcon'
+                                       width={85}/></Col>
         <Col data-aos="flip-up"><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={85}/></Col>
         <Col data-aos="flip-up"><Image src={jira} alt='Language' className='py-2 languageIcon' width={85}/></Col>
         <Col data-aos="flip-up"><Image src={slack} alt='Language' className='py-2 languageIcon' width={85}/></Col>

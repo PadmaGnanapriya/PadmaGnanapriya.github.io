@@ -10,10 +10,11 @@
 
   .about-light {
     h1 {
-      background: -webkit-linear-gradient(#1a266e,  $font-color-dark);
+      background: -webkit-linear-gradient(#1a266e, $font-color-dark);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     background: linear-gradient(#a6c7ea, #cedeec, #cedeec);
   }
 

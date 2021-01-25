@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 AOS.init();
 
 const Achievements: React.FC = () => {
@@ -42,7 +43,7 @@ const Achievements: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
-    <Col data-aos={index%2===1? "fade-up-left": "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
+    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to show the certificate</Tooltip>}>
         <a key={index} href={item.link} target='_blank' rel="noreferrer">
@@ -52,7 +53,7 @@ const Achievements: React.FC = () => {
     </Col>);
 
   return (
-    <div className={isDark?'achievements-dark py-3 px-3 px-md-4 px-lg-5': 'achievements py-3 px-3 px-md-4 px-lg-5'}>
+    <div className={isDark ? 'achievements-dark py-3 px-3 px-md-4 px-lg-5' : 'achievements py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='achievements' className='pt-5'>Achievements</h1>
       <Row>
         {

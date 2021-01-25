@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 AOS.init();
 
 const Education: React.FC = () => {

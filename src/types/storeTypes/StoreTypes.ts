@@ -5,12 +5,9 @@ export interface ChangeTheme {
   payload: boolean;
 }
 
-
-
 export interface ChangeViewYPosition {
   type: typeof CHANGE_VIEW_Y_POSITION;
   payload: number;
 }
-
 
 export type StoreActionTypes = ChangeTheme | ChangeViewYPosition;

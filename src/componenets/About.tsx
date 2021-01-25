@@ -14,8 +14,7 @@ const About: React.FC = () => {
   return (
     <div className={isDark ? 'about-dark py-3 px-3 px-md-4 px-lg-5' : 'about-light about py-3 px-3 px-md-4 px-lg-5'}
          data-aos="zoom-in-up"
-         style={{borderRadius: `${100-viewYPosition*20}% ${100-viewYPosition*20}% 0% 0%`}}
-    >
+         style={{borderRadius: `${100 - viewYPosition * 20}% ${100 - viewYPosition * 20}% 0% 0%`}}>
       <h1 id='about' className='pt-5'>Let me tell<br/> who I am</h1>
 
       <p className='text-left'>Hello, I'm Padma Gnanapriya, Undergraduate at University of Kelaniya BSc(Hons)

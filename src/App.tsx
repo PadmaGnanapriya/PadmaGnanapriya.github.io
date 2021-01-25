@@ -20,7 +20,6 @@ const Skills = React.lazy(() => import("./componenets/Skills"));
 const Achievements = React.lazy(() => import("./componenets/Achievements"));
 
 function App() {
-  document.title = "Padma Gnanapriya";
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   return (
@@ -47,7 +46,6 @@ function App() {
             <Contact/>
             <Footer/>
           </Suspense>
-
         </Col>
       </Row>
     </div>

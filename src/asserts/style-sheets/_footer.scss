@@ -1,6 +1,6 @@
 @import "common/colors";
 
-.footer{
+.footer {
   .social-media {
     .fa {
       padding: 12px;
@@ -34,17 +34,14 @@
     .fa-github:hover {
       background: #4206b7;
     }
-
   }
 }
 
-
 .footer-dark {
   @extend .footer;
-  border-top:  $background-color-light 2px solid;
+  border-top: $background-color-light 2px solid;
   background: #0a1026;
 }
-
 
 .footer-light {
   @extend .footer;

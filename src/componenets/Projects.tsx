@@ -75,15 +75,12 @@ const Projects: React.FC = () => {
       overlay: null,
       sourceCodeLink: "https://github.com/PadmaGnanapriya/SENG-22243-REST-API"
     },
-
-
-
   ]
 
 
   const renderProjects = () => myProjectList.map((project: myProject) =>
     <Col xs={12} sm={6} xl={4}>
-      <Card  data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '18rem', minHeight: '28rem'}}>
+      <Card data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '18rem', minHeight: '28rem'}}>
         <Card.Img variant="top" src={project.image} className='p-1' alt='project'/>
         <Card.Body>
           <Card.Title>{project.title}</Card.Title>
