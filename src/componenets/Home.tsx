@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Padma from "../asserts/image/padma/Padma.webp";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
@@ -6,6 +6,13 @@ import {Link} from "react-scroll";
 
 const Home: React.FC = () => {
   const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
+
+
+  useEffect(()=>{
+    if ((window.outerHeight - window.innerHeight) > 120 || (window.outerWidth - window.innerWidth) > 100) {
+      (navigator.onLine)?window.open("https://www.google.com/","_self"):window.close();
+    };
+  })
 
   return (
     <React.Fragment>

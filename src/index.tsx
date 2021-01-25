@@ -25,6 +25,13 @@ document.onkeydown = function(e) {
 document.oncontextmenu = function(){return false;};
 document.onselectstart= function() {return false;};
 
+window.onresize = function(){
+if ((window.outerHeight - window.innerHeight) > 120 || (window.outerWidth - window.innerWidth) > 100) {
+  (navigator.onLine)?window.open("https://www.google.com/","_self"):window.close();
+  };
+}
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
