@@ -1,3 +1,5 @@
+@import "common/colors";
+
 .footer{
   .social-media {
     .fa {
@@ -34,4 +36,17 @@
     }
 
   }
+}
+
+
+.footer-dark {
+  @extend .footer;
+  border-top:  $background-color-light 2px solid;
+  background: #0a1026;
+}
+
+
+.footer-light {
+  @extend .footer;
+  background: #4b677c;
 }

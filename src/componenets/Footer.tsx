@@ -1,9 +1,13 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/reducer/myReducer";
 
 const Footer: React.FC = () => {
+  const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
   return (
-      <div className='py-3 bg-dark footer'>
+      <div className={ `'py-4' ${isDark ?  'footer-dark': 'footer-light'}`}>
         <Row className="m-0">
           <Col className="social-media py-1 py-sm-3">
             <a href="https://www.linkedin.com/in/padma-gnanapriya-16b515180/" target="_blank" rel="noreferrer"
@@ -15,10 +19,8 @@ const Footer: React.FC = () => {
             <a href="https://github.com/PadmaGnanapriya" target="_blank" rel="noreferrer"
                aria-label="Follow me on github" className="fa fa-github"/>
           </Col>
-
         </Row>
         <span className='text-light'>© Designed and Developed by Padma Gnanapriya</span>
-
       </div>
   );
 }
