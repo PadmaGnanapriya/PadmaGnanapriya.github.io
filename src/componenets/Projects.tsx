@@ -105,7 +105,7 @@ const Projects: React.FC = () => {
   )
   return (
     <div className={isDark ? 'projects-dark py-3 px-3 px-md-4 px-lg-5' : 'projects py-3 px-3 px-md-4 px-lg-5'}>
-      <h1 id='projects' className='pt-5 mt-2'>Projects</h1>
+      <h1 id='projects' className='pt-5 mt-2 pb-3'>Projects</h1>
       <Row className='m-0'>
         {
           renderProjects()

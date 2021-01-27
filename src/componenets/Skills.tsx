@@ -38,6 +38,10 @@ import node from '../asserts/image/skills/node.webp';
 import javafx from '../asserts/image/skills/javafx.webp';
 import git from '../asserts/image/skills/git.webp';
 import visualCode from '../asserts/image/skills/visualcode.webp';
+import netbean from '../asserts/image/skills/netbean.webp';
+import seenBuilder from '../asserts/image/skills/seenbuilder.webp';
+import postman from '../asserts/image/skills/postman.webp';
+
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import LazyLoad from "react-lazyload";
@@ -150,6 +154,7 @@ const Skills: React.FC = () => {
     {tooltip: "Jupiter notebook, jupiter lab", image: jupiter},
   ]
 
+
   const renderSkills = () => skills.map((skill: skill, index: number) =>
     <Col data-aos="zoom-in-up">
       <LazyLoad height={171}>
@@ -159,25 +164,25 @@ const Skills: React.FC = () => {
       </LazyLoad>
     </Col>)
 
+  const tools=[intelijIDEA, webstorm,pycharm, androidStudio,visualCode, netbean, postman, seenBuilder, jira, slack];
+
+  const renderTools = () => tools.map((item: string,index:number)=>
+    <Col key={"tool"+index} data-aos="flip-up"><LazyLoad height={85}><Image src={item} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+  )
   return (
     <div className={isDark ? 'skills-dark py-4' : 'skills py-4'}>
-      <h1 id='skills' className='pt-5'>Skills</h1>
+      <h1 id='skills' className='pt-5 pb-3'>Skills</h1>
       <Row className='m-0'>
         {
           renderSkills()
         }
       </Row>
-      <h1 className='pt-5 d-none d-md-block'>Favourite Apps</h1>
+      <h1 className='pt-5 d-none d-md-block pb-3'>Favourite Apps</h1>
 
       <Row className='m-0 d-none d-md-flex skills'>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={androidStudio} alt='Language' className='py-2 languageIcon'
-                                       width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={jira} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
-        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={slack} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        {
+          renderTools()
+        }
       </Row>
     </div>
   );

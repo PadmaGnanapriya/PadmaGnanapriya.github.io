@@ -54,7 +54,7 @@ const Achievements: React.FC = () => {
 
   return (
     <div className={isDark ? 'achievements-dark py-3 px-3 px-md-4 px-lg-5' : 'achievements py-3 px-3 px-md-4 px-lg-5'}>
-      <h1 id='achievements' className='pt-5'>Achievements</h1>
+      <h1 id='achievements' className='pt-5 pb-3'>Achievements</h1>
       <Row>
         {
           renderAchievements()

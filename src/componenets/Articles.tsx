@@ -86,7 +86,7 @@ const Articles: React.FC = () => {
 
   return (
     <div className={isDark ? 'articles-dark px-3 py-3 px-md-4 px-lg-5' : 'articles py-3 px-3 px-md-4 px-lg-5'}>
-      <h1 id='articles' className='pt-5 mt-2'>My medium articles</h1>
+      <h1 id='articles' className='pt-5 mt-2 pb-3'>My medium articles</h1>
       <Row>
         {renderArticleList()}
       </Row>

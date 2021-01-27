@@ -15,13 +15,12 @@ const About: React.FC = () => {
     <div className={isDark ? 'about-dark py-3 px-3 px-md-4 px-lg-5' : 'about-light about py-3 px-3 px-md-4 px-lg-5'}
          data-aos="zoom-in-up"
          style={{borderRadius: `${100 - viewYPosition * 20}% ${100 - viewYPosition * 20}% 0% 0%`}}>
-      <h1 id='about' className='pt-5'>Let me tell<br/> who I am</h1>
+      <h1 id='about' className='pt-5 pb-3'>Let me tell<br/> who I am</h1>
 
-      <p className='text-left'>Hello, I'm Padma Gnanapriya, Undergraduate at University of Kelaniya BSc(Hons)
-        Software Engineering. I am good at being a team player as well as leading a team. By facing the dynamic
-        changes in the rapidly growing IT industry, I am keen on Web development and Data Science, also looking
-        forward to working as a Software Engineer in challenging assignments. I also have interest in Blogging,
-        Astronomy, Mathematics, Electrics, and active lifestyle.</p>
+      <p className='text-left'>I am reading a degree in software engineering at University of Kelaniya Sri Lanka.
+        I am good at being a team player as well as leading a team. By facing the dynamic changes in the rapidly
+        growing IT industry, I am keen on Web development and I always trying to build a more attractive thing.
+        I also have an interest in blogging, astronomy, mathematics and active lifestyle..</p>
     </div>
   );
 }

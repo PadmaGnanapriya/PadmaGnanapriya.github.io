@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
   return (
     <div className={isDark ? 'contact-dark py-3 px-3 px-md-4 px-lg-5' : 'contact py-3 px-3 px-md-4 px-lg-5'}>
 
-      <h1 className='pt-5 mt-2'>Contact me</h1>
+      <h1 className='pt-5 mt-2 pb-3'>Contact me</h1>
       <Card data-aos="zoom-in" body id='contact' className='my-2 mx-auto' style={{maxWidth: '400px'}}>
         <Row className='mt-1'>
           <Col className='text-left pl-4' xs={12} sm={4}>Email</Col>

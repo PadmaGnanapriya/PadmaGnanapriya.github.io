@@ -11,12 +11,12 @@ const Education: React.FC = () => {
 
   return (
     <div className={isDark ? 'education-dark py-3 px-3 px-md-4 px-lg-5' : 'education py-3 px-3 px-md-4 px-lg-5'}>
-      <h1 id='education' className='pt-5 mt-2'>Education</h1>
+      <h1 id='education' className='pt-5 mt-2 pb-3'>Education</h1>
 
       <div data-aos="fade-up">
         <a href='https://www.kln.ac.lk/' target='_blank' rel="noreferrer"><h2 className='text-left'>
           University of Kelaniya</h2></a>
-        <p className='text-left'>Since 2019 February I am learning software engineering. Currently in Level 2
+        <p className='text-left'>Since 2019 February I am learning software engineering. Currently in Level 3
           maintaining the GPA at 3.33 out of 4.0
         </p>
         <br/>
