@@ -41,7 +41,6 @@ import visualCode from '../asserts/image/skills/visualcode.webp';
 import netbean from '../asserts/image/skills/netbean.webp';
 import seenBuilder from '../asserts/image/skills/seenbuilder.webp';
 import postman from '../asserts/image/skills/postman.webp';
-
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import LazyLoad from "react-lazyload";
@@ -50,13 +49,13 @@ import LazyLoad from "react-lazyload";
 
 const Skills: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
-  const[browser, setBrowser]=useState("Browser Undefined");
+  const[browser, setBrowser]=useState("Undefined");
 
 
   const publicIp = require('public-ip');
 
   useEffect(() => {
-    try {
+    if(navigator.onLine){
       const getUA = () => {
         let device = "Unknown";
         const ua = {
@@ -95,10 +94,8 @@ const Skills: React.FC = () => {
       BrowserDetect();
 
       let ip = 'ip';
-      (async () => {
-        if(navigator.onLine){
-          ip = (await publicIp.v4());
-        }
+      (async () => {ip = (await publicIp.v4());
+
         await (
           fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${ip}&entry.98424334=country&entry.1201372642=city&entry.2060483585=${browser}&entry.900514976=PadmaReact&entry.1590939237=Location&entry.2078832264=${getUA()}&entry.2144518207=${navigator.platform}`, {
             method: 'POST',
@@ -110,9 +107,7 @@ const Skills: React.FC = () => {
         )
       })();
     }
-    catch (error){
-      console.log("Network error");
-    }
+    console.clear();
   }, )
 
   type skill = {
@@ -156,7 +151,7 @@ const Skills: React.FC = () => {
 
 
   const renderSkills = () => skills.map((skill: skill, index: number) =>
-    <Col data-aos="zoom-in-up">
+    <Col data-aos="zoom-in-up" key={"skill"+ index}>
       <LazyLoad height={171}>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}}  overlay={<Tooltip id={index + "-skill"}>
         {skill.tooltip}</Tooltip>}><Image src={skill.image} alt='Language' width={170} height={66} className='languageIcon py-1'/>

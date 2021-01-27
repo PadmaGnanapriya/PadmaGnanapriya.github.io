@@ -78,8 +78,8 @@ const Projects: React.FC = () => {
   ]
 
 
-  const renderProjects = () => myProjectList.map((project: myProject) =>
-    <Col xs={12} sm={6} xl={4}>
+  const renderProjects = () => myProjectList.map((project: myProject, index:number) =>
+    <Col xs={12} sm={6} xl={4} key={"key-"+index}>
       <Card data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '327px', minHeight: '430px'}}>
         <Card.Img variant="top" style={{maxWidth: '325px'}} src={project.image} className='p-1 project-img' alt='project'/>
         <Card.Body>

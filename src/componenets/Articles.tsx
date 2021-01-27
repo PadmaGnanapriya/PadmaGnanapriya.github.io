@@ -76,7 +76,7 @@ const Articles: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderArticleList = () => myArticles.map((item: Article, index: number) =>
-    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='p-0'>
+    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='p-0' key={"key"+index}>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to navigate to the article</Tooltip>}>
         <a key={index} href={item.link} target='_blank' rel="noreferrer">

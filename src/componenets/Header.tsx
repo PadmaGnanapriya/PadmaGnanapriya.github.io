@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   ];
 
 
-  const renderList = () => myList.map((item) => <Nav.Link><Link key={item.view} activeClass="active"
+  const renderList = () => myList.map((item) => <Nav.Link key={item.view}><Link activeClass="active"
                                                                 className={`${item.value} myLink`} to={item.value}
                                                                 spy={true} smooth={true}
                                                                 duration={500}>{item.view}</Link></Nav.Link>)
