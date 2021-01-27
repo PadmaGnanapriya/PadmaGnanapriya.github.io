@@ -1,5 +1,4 @@
 import React, {Suspense} from 'react';
-import './App.css';
 import {Col, Row} from 'react-bootstrap';
 import SlideNav from "./componenets/SlideNav";
 import Header from "./componenets/Header";
