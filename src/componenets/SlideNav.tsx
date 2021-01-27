@@ -50,10 +50,10 @@ const SlideNav: React.FC = () => {
   return (
     <div className='vh-100 slide-nav mx-auto'>
       <br/>
-      <LazyLoad height={185}>
+      {/*<LazyLoad height={185}>*/}
 
       <img src={Padma} alt="Padma" width={183} className='ml-4' style={{borderRadius: `${myBorderRadius}%`}}/>
-      </LazyLoad>
+      {/*</LazyLoad>*/}
       <label className="pt-1 pr-2 pl-5 ml-5" onClick={handleOnThemeChange}>
         <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
       </label>
