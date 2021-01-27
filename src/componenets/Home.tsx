@@ -2,6 +2,7 @@ import React from 'react';
 import Padma from "../asserts/image/padma/Padma.webp";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import LazyLoad from 'react-lazyload';
 
 const Home: React.FC = () => {
   const viewYPosition: number = useSelector((state: RootState) => state.viewYPosition);
@@ -34,14 +35,18 @@ const Home: React.FC = () => {
               }}>I'm Padma</strong>
           </div>
         }{
-        viewYPosition < 4 &&
+        viewYPosition < 4.5 &&
+        <LazyLoad height={200}>
         <img src={Padma} alt="Padma" width={viewYPosition > 1 ? 360 - viewYPosition * 80 : viewYPosition * 300}
              className='ml-4' style={{
           borderRadius: `100%`,
           left: `${viewYPosition * 20}vw`,
           top: `${viewYPosition > 1.1 ? 25.5 - viewYPosition * 10 : viewYPosition * 13 + 4}vw`,
           position: 'absolute',
-        }}/>}
+        }}/>
+        </LazyLoad>
+
+        }
         {
           viewYPosition < 3.25 && viewYPosition > 2
           &&
@@ -75,13 +80,16 @@ const Home: React.FC = () => {
           </div>
         }{
         viewYPosition < 3.5 &&
+        <LazyLoad height={200}>
         <img src={Padma} alt="Padma" width={viewYPosition > 1 ? 300 - viewYPosition * 70 : viewYPosition * 190}
              className='ml-4' style={{
           borderRadius: `100%`,
           left: `${viewYPosition * 10}vw`,
           top: `${viewYPosition > 1 ? 35 - viewYPosition * 10 : viewYPosition * 13 + 14}vw`,
           position: 'absolute',
-        }}/>}
+        }}/>
+        </LazyLoad>
+        }
         {
           viewYPosition < 4 && viewYPosition > 1.5
           &&

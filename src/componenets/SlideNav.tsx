@@ -6,6 +6,7 @@ import {setDarkTheme, setViewYPosition} from "../store/action/storeAction";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import {Col, Row} from "react-bootstrap";
+import LazyLoad from "react-lazyload";
 
 
 const SlideNav: React.FC = () => {
@@ -49,7 +50,10 @@ const SlideNav: React.FC = () => {
   return (
     <div className='vh-100 slide-nav mx-auto'>
       <br/>
+      <LazyLoad height={185}>
+
       <img src={Padma} alt="Padma" width={183} className='ml-4' style={{borderRadius: `${myBorderRadius}%`}}/>
+      </LazyLoad>
       <label className="pt-1 pr-2 pl-5 ml-5" onClick={handleOnThemeChange}>
         <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
       </label>

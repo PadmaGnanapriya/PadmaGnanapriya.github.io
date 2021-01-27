@@ -40,6 +40,7 @@ import git from '../asserts/image/skills/git.webp';
 import visualCode from '../asserts/image/skills/visualcode.webp';
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
+import LazyLoad from "react-lazyload";
 // import flutter from './skills/flutter.webp';
 
 
@@ -91,8 +92,9 @@ const Skills: React.FC = () => {
 
       let ip = 'ip';
       (async () => {
-        ip = (await publicIp.v4());
-
+        if(navigator.onLine){
+          ip = (await publicIp.v4());
+        }
         await (
           fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${ip}&entry.98424334=country&entry.1201372642=city&entry.2060483585=${browser}&entry.900514976=PadmaReact&entry.1590939237=Location&entry.2078832264=${getUA()}&entry.2144518207=${navigator.platform}`, {
             method: 'POST',
@@ -150,9 +152,11 @@ const Skills: React.FC = () => {
 
   const renderSkills = () => skills.map((skill: skill, index: number) =>
     <Col data-aos="zoom-in-up">
+      <LazyLoad height={171}>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}}  overlay={<Tooltip id={index + "-skill"}>
         {skill.tooltip}</Tooltip>}><Image src={skill.image} alt='Language' width={170} height={66} className='languageIcon py-1'/>
       </OverlayTrigger>
+      </LazyLoad>
     </Col>)
 
   return (
@@ -166,14 +170,14 @@ const Skills: React.FC = () => {
       <h1 className='pt-5 d-none d-md-block'>Favourite Apps</h1>
 
       <Row className='m-0 d-none d-md-flex skills'>
-        <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={androidStudio} alt='Language' className='py-2 languageIcon'
-                                       width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={jira} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={slack} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={androidStudio} alt='Language' className='py-2 languageIcon'
+                                       width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={jira} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+        <Col data-aos="flip-up"><LazyLoad height={85}><Image src={slack} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
       </Row>
     </div>
   );
