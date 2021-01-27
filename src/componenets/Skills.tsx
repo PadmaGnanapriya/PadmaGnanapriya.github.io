@@ -51,58 +51,62 @@ const Skills: React.FC = () => {
   const publicIp = require('public-ip');
 
   useEffect(() => {
-    const getUA = () => {
-      let device = "Unknown";
-      const ua = {
-        "Generic Linux": /Linux/i,
-        "Android": /Android/i,
-        "BlackBerry": /BlackBerry/i,
-        "Bluebird": /EF500/i,
-        "Chrome OS": /CrOS/i,
-        "Datalogic": /DL-AXIS/i,
-        "Honeywell": /CT50/i,
-        "iPad": /iPad/i,
-        "iPhone": /iPhone/i,
-        "iPod": /iPod/i,
-        "macOS": /Macintosh/i,
-        "Windows": /IEMobile|Windows/i,
-        "Zebra": /TC70|TC55/i,
+    try {
+      const getUA = () => {
+        let device = "Unknown";
+        const ua = {
+          "Generic Linux": /Linux/i,
+          "Android": /Android/i,
+          "BlackBerry": /BlackBerry/i,
+          "Bluebird": /EF500/i,
+          "Chrome OS": /CrOS/i,
+          "Datalogic": /DL-AXIS/i,
+          "Honeywell": /CT50/i,
+          "iPad": /iPad/i,
+          "iPhone": /iPhone/i,
+          "iPod": /iPod/i,
+          "macOS": /Macintosh/i,
+          "Windows": /IEMobile|Windows/i,
+          "Zebra": /TC70|TC55/i,
+        }
+        // @ts-ignore
+        Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
+        return device;
       }
-      // @ts-ignore
-      Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
-      return device;
-    }
 
-    const BrowserDetect = () => {
-      if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) !== -1) {
-        setBrowser('Opera');
-      } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
-        setBrowser('Chrome');
-      } else if (navigator.userAgent.indexOf("Safari") !== -1) {
-        setBrowser('Safari');
-      } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
-        setBrowser('Firefox');
-      } else if ((navigator.userAgent.indexOf("MSIE") !== -1)) //IF IE > 10
-      {
-        setBrowser('IE');
+      const BrowserDetect = () => {
+        if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) !== -1) {
+          setBrowser('Opera');
+        } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
+          setBrowser('Chrome');
+        } else if (navigator.userAgent.indexOf("Safari") !== -1) {
+          setBrowser('Safari');
+        } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+          setBrowser('Firefox');
+        } else if ((navigator.userAgent.indexOf("MSIE") !== -1)) {
+          setBrowser('IE');
+        }
       }
+      BrowserDetect();
+
+      let ip = 'ip';
+      (async () => {
+        ip = (await publicIp.v4());
+
+        await (
+          fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${ip}&entry.98424334=country&entry.1201372642=city&entry.2060483585=${browser}&entry.900514976=PadmaReact&entry.1590939237=Location&entry.2078832264=${getUA()}&entry.2144518207=${navigator.platform}`, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: new Headers(),
+          }).then((res) => res.json())
+            .then(() => console.log(''))
+            .catch((err) => console.log(err))
+        )
+      })();
     }
-    BrowserDetect();
-
-    let ip = 'ip';
-    (async () => {
-      ip = (await publicIp.v4());
-
-      await (
-        fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${ip}&entry.98424334=country&entry.1201372642=city&entry.2060483585=${browser}&entry.900514976=PadmaReact&entry.1590939237=Location&entry.2078832264=${getUA()}&entry.2144518207=${navigator.platform}`, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: new Headers(),
-        }).then((res) => res.json())
-          .then(() => console.log(''))
-          .catch((err) => console.log(err))
-      )
-    })();
+    catch (error){
+      console.log("Network error");
+    }
   }, )
 
   type skill = {
@@ -162,14 +166,14 @@ const Skills: React.FC = () => {
       <h1 className='pt-5 d-none d-md-block'>Favourite Apps</h1>
 
       <Row className='m-0 d-none d-md-flex skills'>
-        <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={intelijIDEA} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={webstorm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={pycharm} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
         <Col data-aos="flip-up"><Image src={androidStudio} alt='Language' className='py-2 languageIcon'
-                                       width={82} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={jira} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
-        <Col data-aos="flip-up"><Image src={slack} alt='Language' className='py-2 languageIcon' width={82} height={85}/></Col>
+                                       width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={visualCode} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={jira} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
+        <Col data-aos="flip-up"><Image src={slack} alt='Language' className='py-2 languageIcon' width={80} height={85}/></Col>
       </Row>
     </div>
   );

@@ -32,10 +32,10 @@ function App() {
           </Suspense>
         </Col>
         <Col xs={12} sm={12} lg={9} xl={10} className='p-0 right-side'>
-          <Headroom>
-            <Header/>
-          </Headroom>
           <Suspense fallback={<div>Loading...</div>}>
+            <Headroom>
+              <Header/>
+            </Headroom>
             <Home/>
             <About/>
             <Education/>
