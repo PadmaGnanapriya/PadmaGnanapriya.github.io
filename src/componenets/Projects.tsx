@@ -80,8 +80,8 @@ const Projects: React.FC = () => {
 
   const renderProjects = () => myProjectList.map((project: myProject) =>
     <Col xs={12} sm={6} xl={4}>
-      <Card data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '18rem', minHeight: '28rem'}}>
-        <Card.Img variant="top" src={project.image} className='p-1' alt='project'/>
+      <Card data-aos="flip-left" className='proj mx-auto my-2' style={{maxWidth: '330px', minHeight: '430px'}}>
+        <Card.Img variant="top" style={{maxWidth: '325px'}} src={project.image} className='p-1 project-img' alt='project'/>
         <Card.Body>
           <Card.Title>{project.title}</Card.Title>
           <Card.Text><small>{project.description}</small>

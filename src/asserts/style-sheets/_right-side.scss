@@ -63,11 +63,19 @@
   //---------------------------------------------------
 
   .projects {
-    .proj:hover {
-      transform: scale(1.02);
-      -webkit-transition: all .5s;
-      -moz-transition: all .5s;
-      transition: all .5s ease-in-out;
+    .proj {
+      .project-img{
+        height: auto;
+        width: 100%;
+        max-width: 325px;
+        max-height: 255px;
+      }
+      &:hover {
+        transform: scale(1.02);
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s ease-in-out;
+      }
     }
   }
 

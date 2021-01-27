@@ -49,7 +49,7 @@ const SlideNav: React.FC = () => {
   return (
     <div className='vh-100 slide-nav mx-auto'>
       <br/>
-      <img src={Padma} alt="Padma" width={180} className='ml-4' style={{borderRadius: `${myBorderRadius}%`}}/>
+      <img src={Padma} alt="Padma" width={183} className='ml-4' style={{borderRadius: `${myBorderRadius}%`}}/>
       <label className="pt-1 pr-2 pl-5 ml-5" onClick={handleOnThemeChange}>
         <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
       </label>
