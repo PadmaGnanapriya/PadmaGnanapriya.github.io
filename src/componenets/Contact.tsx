@@ -1,14 +1,45 @@
-import React from 'react';
-import {Card, Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
+import {Button, Card, Col, Form, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
 import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 AOS.init();
 
 const Contact: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
+
+  const[name, setName] = useState<string>('');
+  const[email, setEmail] = useState<string>('');
+  const[contact, setContact] = useState<string>('');
+  const[message, setMessage] =useState<string>('');
+
+  const handleOnSubmit = (event:FormEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if(email.slice(email.length-3)!=='com'){
+      alert(email.slice(3));
+      alert("Email is not correct");
+      return;
+    }
+    const phoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if(!contact.match(phoneno)){
+      alert("Contact number is not correct")
+      return;
+    }
+
+
+
+
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+
+    Array.from(document.querySelectorAll("textarea")).forEach(
+      textarea => (textarea.value = "")
+    );
+  }
+
 
   return (
     <div className={isDark ? 'contact-dark py-3 px-3 px-md-4 px-lg-5' : 'contact py-3 px-3 px-md-4 px-lg-5'}>
@@ -56,28 +87,34 @@ const Contact: React.FC = () => {
         </Col>
 
         <Col xs={12} lg={7} className='m-0 p-0'>
-          <Card className='m-0 ml-lg-2 p-2'>
-
-            <div className="styled-input">
-              <input type="text" required/>
-              <label>Name</label>
-              <span/>
-            </div>
-            <div className="styled-input">
-              <input type="email" required/>
-              <label>Email</label>
-              <span/>
-            </div>
-            <div className="styled-input">
-              <input type="text" required/>
-              <label>Contact Number</label>
-              <span/>
-            </div>
-            <div className="styled-input wide">
-              <textarea required/>
-              <label>Message</label>
-              <span/>
-            </div>
+          <Card data-aos="zoom-in" className='m-0 ml-lg-2 p-2'>
+            <Form onSubmit={handleOnSubmit}>
+              <Row>
+                <Col xs={12} className="styled-input">
+                  <input type="text" onChange={(e:ChangeEvent<HTMLInputElement>)=> setName(e.target.value)} required/>
+                  <label>Name</label>
+                  <span/>
+                </Col>
+                <Col  xs={12} className="styled-input">
+                  <input type="email" onChange={(e:ChangeEvent<HTMLInputElement>)=> setEmail(e.target.value)} required/>
+                  <label>Email</label>
+                  <span/>
+                </Col>
+                <Col  xs={12} className="styled-input">
+                  <input type="text" onChange={(e:ChangeEvent<HTMLInputElement>)=> setContact(e.target.value)} required/>
+                  <label>Contact Number</label>
+                  <span/>
+                </Col>
+                <Col  xs={12} className="styled-input wide">
+                  <textarea onChange={(e:ChangeEvent<HTMLTextAreaElement>)=> setName(e.target.value)} required/>
+                  <label>Message</label>
+                  <span/>
+                </Col>
+                <Col xs={12} >
+                  <Button type='submit'>Post to Padma</Button>
+                </Col>
+              </Row>
+            </Form>
           </Card>
         </Col>
       </Row>
