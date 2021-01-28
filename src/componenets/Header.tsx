@@ -44,19 +44,25 @@ const Header: React.FC = () => {
       <Navbar collapseOnSelect expand="md" bg={isDark ? "dark" : "light"} variant={isDark ? "dark" : "light"}
               className={isDark ? 'header-dev d-lg-none' : 'header-dev-dark d-lg-none'}>
         <Navbar.Brand><Link activeClass="active" className="home"
-                            to="home" spy={true} smooth={true} duration={500}>Padma</Link></Navbar.Brand>
-        <label className="pt-2 pr-2 pl-1 d-md-none" onClick={handleOnThemeChange}>
-          <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
-        </label>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                            to="home" spy={true} smooth={true} duration={500}>Padma
+          <span className='d-none d-sm-inline d-md-none'> Gnananpriya</span>
+        </Link></Navbar.Brand>
+
+
+        <Navbar.Brand className='float-right d-md-none' style={{position: 'fixed', right:'40px', top: '-4px'}}>
+          <label className="pt-3 px-1" onClick={handleOnThemeChange}>
+            <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
+          </label>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"  style={{fontSize: '12px', padding: '1px 5px'}}/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
           <Nav className='my-nav-list'>
             {renderList()}
           </Nav>
-          <label className="pt-2 pr-2 pl-1 d-none d-md-block" onClick={handleOnThemeChange}>
-            <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
+          <label className="pt-3 px-1" onClick={handleOnThemeChange}>
+            <Switch className='isDarkModeToggle px-auto d-none d-md-block' onChange={handleOnThemeChange} checked={!isDark}/>
           </label>
         </Navbar.Collapse>
       </Navbar>
