@@ -193,6 +193,20 @@
       font-size: 1.4rem;
     }
 
+    input:required {
+      box-shadow:none;
+    }
+    input:invalid {
+      box-shadow:none;
+    }
+
+    textarea:required {
+      box-shadow:none;
+    }
+    textarea:invalid {
+      box-shadow:none;
+    }
+
     input ~ span,
     textarea ~ span {
       display: block;
