@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
 
 
   return (
-    <div className={isDark ? 'contact-dark py-3 px-3 px-md-4 px-lg-5' : 'contact py-3 px-3 px-md-4 px-lg-5'}>
+    <div className={isDark ? 'contact-dark py-3 px-3 px-md-4 px-lg-5' : 'contact-light py-3 px-3 px-md-4 px-lg-5'}>
       <h1 className='pt-5 mt-2 pb-3'>Contact me</h1>
       <Row className='m-0 p-0'>
         <Col xs={12} lg={5} className='mx-0 p-0 my-1'>

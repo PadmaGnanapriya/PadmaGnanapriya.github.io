@@ -104,7 +104,7 @@ const Skills: React.FC = () => {
     <Col key={"tool"+index} data-aos="flip-up"><LazyLoad height={85}><Image src={item} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
   )
   return (
-    <div className={isDark ? 'skills-dark py-4' : 'skills py-4'}>
+    <div className={isDark ? 'skills-dark py-4' : 'skills-light py-4'}>
       <h1 id='skills' className='pt-5 pb-3'>Skills</h1>
       <Row className='m-0'>
         {

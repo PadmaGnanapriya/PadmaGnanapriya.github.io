@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
 
   return (
       <div className={ `'py-4' ${isDark ?  'footer-dark': 'footer-light'}`}>
-        <Row className="m-0">
+        <Row className="m-0 pt-2">
           <Col className="social-media py-1 py-sm-3">
             <a href="https://www.linkedin.com/in/padma-gnanapriya-16b515180/" target="_blank" rel="noreferrer"
                aria-label="Follow me on linkedin" className="fa fa-linkedin"/>
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                aria-label="Follow me on github" className="fa fa-github"/>
           </Col>
         </Row>
-        <span className='text-light'>© Designed and Developed by Padma Gnanapriya</span>
+        <div className='text-light pb-3'>© Designed and Developed by Padma Gnanapriya</div>
       </div>
   );
 }

@@ -10,7 +10,7 @@ const Education: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   return (
-    <div className={isDark ? 'education-dark py-3 px-3 px-md-4 px-lg-5' : 'education py-3 px-3 px-md-4 px-lg-5'}>
+    <div className={isDark ? 'education-dark py-3 px-3 px-md-4 px-lg-5' : 'education-light py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='education' className='pt-5 mt-2 pb-3'>Education</h1>
 
       <div data-aos="fade-up">

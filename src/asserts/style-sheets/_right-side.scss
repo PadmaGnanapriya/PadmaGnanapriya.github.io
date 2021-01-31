@@ -33,7 +33,7 @@
 
 
   //---------------------------------------------------
-  .education {
+  .education-light {
     clip-path: polygon(
                     0 0, /* left top */
                     100% 0, /* right top */
@@ -64,7 +64,7 @@
   //---------------------------------------------------
 
 
-  .skills {
+  .skills-light {
     clip-path: polygon(
                     0 5%, /* left top */
                     100% 0, /* right top */
@@ -84,7 +84,7 @@
   }
 
   .skills-dark {
-    @extend .skills;
+    @extend .skills-light;
     background: $background-color-dark2;
     color: $font-color-light;
   }
@@ -92,9 +92,10 @@
 
   //---------------------------------------------------
 
-  .projects {
-    color: $font-color-dark;
+  .projects-light {
+    color: $font-color-light;
     .proj {
+      color: $font-color-dark;
       .project-img {
         height: auto;
         width: 100%;
@@ -112,7 +113,7 @@
   }
 
   .projects-dark {
-    @extend .projects;
+    @extend .projects-light;
     //background: $background-color-dark;
     color: $font-color-light;
 
@@ -184,7 +185,7 @@
 
   //---------------------------------------------------
 
-  .contact {
+  .contact-light {
     color: $font-color-light;
 
     a {
@@ -282,7 +283,7 @@
   }
 
   .contact-dark {
-    @extend .contact;
+    @extend .contact-light;
     background: $background-color-dark;
     color: $font-color-light;
 
