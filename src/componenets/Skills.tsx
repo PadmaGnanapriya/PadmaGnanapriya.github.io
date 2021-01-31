@@ -7,10 +7,10 @@ import bootstrap from '../asserts/image/skills/bootstrap.webp';
 import graphql from '../asserts/image/skills/graphql.webp';
 import gradle from '../asserts/image/skills/gradle.webp';
 import androidStudio from '../asserts/image/skills/androidstudio.webp';
-import amazon from '../asserts/image/skills/aws.webp';
+import amazon from '../asserts/image/skills/amazon.webp';
 import colab from '../asserts/image/skills/colab.webp';
 import express from '../asserts/image/skills/express.webp';
-import hibernate from '../asserts/image/skills/hibernate.webp';
+import hibernate from '../asserts/image/skills/hibernate2.webp';
 import intelijIDEA from '../asserts/image/skills/intelij.webp';
 import java from '../asserts/image/skills/java.webp';
 import jira from '../asserts/image/skills/jira.webp';
@@ -30,8 +30,8 @@ import web from '../asserts/image/skills/web.webp';
 import webstorm from '../asserts/image/skills/webstorm.webp';
 import typescript from '../asserts/image/skills/typescript.webp';
 import python from '../asserts/image/skills/python.webp';
-import mongodb from '../asserts/image/skills/mongo.webp';
-import redux from '../asserts/image/skills/redux.webp';
+import mongodb from '../asserts/image/skills/mongodb2.webp';
+import redux from '../asserts/image/skills/redux2.webp';
 import node from '../asserts/image/skills/node.webp';
 import javafx from '../asserts/image/skills/javafx.webp';
 import git from '../asserts/image/skills/git.webp';
@@ -113,7 +113,7 @@ const Skills: React.FC = () => {
       </Row>
       <h1 className='pt-5 d-none d-md-block pb-3'>Favourite Apps</h1>
 
-      <Row className='m-0 d-none d-md-flex skills'>
+      <Row className='m-0 d-none d-md-flex'>
         {
           renderTools()
         }

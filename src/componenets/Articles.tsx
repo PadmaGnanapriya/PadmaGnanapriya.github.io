@@ -76,7 +76,7 @@ const Articles: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderArticleList = () => myArticles.map((item: Article, index: number) =>
-    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='p-0' key={"key"+index}>
+    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='py-0 px-2 px-lg-0' key={"key"+index}>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to navigate to the article</Tooltip>}>
         <a key={index} href={item.link} target='_blank' rel="noreferrer">
@@ -85,7 +85,7 @@ const Articles: React.FC = () => {
     </Col>);
 
   return (
-    <div className={isDark ? 'articles-dark px-3 py-3 px-md-4 px-lg-5' : 'articles py-3 px-3 px-md-4 px-lg-5'}>
+    <div className={isDark ? 'articles-dark px-3 py-4 px-lg-5' : 'articles py-3 px-3 px-md-4 px-lg-5'}>
       <h1 id='articles' className='pt-5 mt-2 pb-3'>My medium articles</h1>
       <Row>
         {renderArticleList()}

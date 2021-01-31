@@ -6,6 +6,7 @@ import Headroom from "react-headroom";
 import "./asserts/style-sheets/main.scss";
 import {useSelector} from "react-redux";
 import {RootState} from "./store/reducer/myReducer";
+import backgroundImg from './asserts/image/background.webp';
 
 
 const Home = React.lazy(() => import("./componenets/Home"));
@@ -30,7 +31,12 @@ function App() {
             <SlideNav/>
           </Suspense>
         </Col>
-        <Col xs={12} sm={12} lg={9} xl={10} className='p-0 right-side'>
+        <Col xs={12} sm={12} lg={9} xl={10} className='p-0 right-side'
+             style={{background: `url(${backgroundImg})`, backgroundAttachment: 'fixed',
+               backgroundPosition: 'center',
+               backgroundRepeat: 'no-repeat',
+               backgroundSize: 'cover'}}
+        >
           <Suspense fallback={<div>Loading...</div>}>
             <Headroom>
               <Header/>

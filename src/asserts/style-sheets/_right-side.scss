@@ -2,8 +2,8 @@
 
 .right-side {
   font-size: large;
-  background: $background-color-light;
-  color: $font-color-dark;
+  //background: yellow;
+  color: $font-color-light;
 
 
   //---------------------------------------------------
@@ -16,6 +16,8 @@
     }
 
     background: linear-gradient(#a6c7ea, #cedeec, #cedeec);
+    color: $font-color-dark;
+
   }
 
   .about-dark {
@@ -31,6 +33,17 @@
 
 
   //---------------------------------------------------
+  .education {
+    clip-path: polygon(
+                    0 0, /* left top */
+                    100% 0, /* right top */
+                    100% 95%, /* right bottom */
+                    0 100% /* left bottom */
+    );
+    background: $background-color-light;
+    color: $font-color-dark;
+  }
+
 
   .education-dark {
     clip-path: polygon(
@@ -50,6 +63,7 @@
 
   //---------------------------------------------------
 
+
   .skills {
     clip-path: polygon(
                     0 5%, /* left top */
@@ -57,6 +71,10 @@
                     100% 100%, /* right bottom */
                     0 100% /* left bottom */
     );
+    background: $background-color-light2;
+    color: $font-color-dark;
+
+
     .languageIcon:hover {
       transform: scale(1.06);
       -webkit-transition: all .5s;
@@ -75,13 +93,15 @@
   //---------------------------------------------------
 
   .projects {
+    color: $font-color-dark;
     .proj {
-      .project-img{
+      .project-img {
         height: auto;
         width: 100%;
         max-width: 325px;
         max-height: 255px;
       }
+
       &:hover {
         transform: scale(1.02);
         -webkit-transition: all .5s;
@@ -93,7 +113,7 @@
 
   .projects-dark {
     @extend .projects;
-    background: $background-color-dark;
+    //background: $background-color-dark;
     color: $font-color-light;
 
     .proj {
@@ -165,7 +185,12 @@
   //---------------------------------------------------
 
   .contact {
+    color: $font-color-light;
+
     a {
+      color: $font-color-dark;
+    }
+    #contact{
       color: $font-color-dark;
     }
 
@@ -194,7 +219,9 @@
       pointer-events: none;
     }
 
-    .styled-input.wide { width: 100%; }
+    .styled-input.wide {
+      width: 100%;
+    }
 
     input,
     textarea {
@@ -206,17 +233,19 @@
     }
 
     input:required {
-      box-shadow:none;
+      box-shadow: none;
     }
+
     input:invalid {
-      box-shadow:none;
+      box-shadow: none;
     }
 
     textarea:required {
-      box-shadow:none;
+      box-shadow: none;
     }
+
     textarea:invalid {
-      box-shadow:none;
+      box-shadow: none;
     }
 
     input ~ span,
@@ -233,7 +262,9 @@
     }
 
     input:focus,
-    textarea:focus { outline: 0; }
+    textarea:focus {
+      outline: 0;
+    }
 
     input:focus ~ span,
     textarea:focus ~ span {
