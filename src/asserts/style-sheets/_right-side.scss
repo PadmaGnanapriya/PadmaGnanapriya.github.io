@@ -33,6 +33,12 @@
   //---------------------------------------------------
 
   .education-dark {
+    clip-path: polygon(
+                    0 0, /* left top */
+                    100% 0, /* right top */
+                    100% 95%, /* right bottom */
+                    0 100% /* left bottom */
+    );
     background: $background-color-dark;
     color: $font-color-light;
 
@@ -45,6 +51,12 @@
   //---------------------------------------------------
 
   .skills {
+    clip-path: polygon(
+                    0 5%, /* left top */
+                    100% 0, /* right top */
+                    100% 100%, /* right bottom */
+                    0 100% /* left bottom */
+    );
     .languageIcon:hover {
       transform: scale(1.06);
       -webkit-transition: all .5s;
@@ -55,7 +67,7 @@
 
   .skills-dark {
     @extend .skills;
-    background: $background-color-dark;
+    background: $background-color-dark2;
     color: $font-color-light;
   }
 

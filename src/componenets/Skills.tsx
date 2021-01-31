@@ -10,13 +10,11 @@ import androidStudio from '../asserts/image/skills/androidstudio.webp';
 import amazon from '../asserts/image/skills/aws.webp';
 import colab from '../asserts/image/skills/colab.webp';
 import express from '../asserts/image/skills/express.webp';
-import firebase from '../asserts/image/skills/firebase.webp';
 import hibernate from '../asserts/image/skills/hibernate.webp';
 import intelijIDEA from '../asserts/image/skills/intelij.webp';
 import java from '../asserts/image/skills/java.webp';
 import jira from '../asserts/image/skills/jira.webp';
 import jQuery from '../asserts/image/skills/jQuery.webp';
-import jupiter from '../asserts/image/skills/jupiter.webp';
 import kotlin from '../asserts/image/skills/kotlin.webp';
 import maven from '../asserts/image/skills/maven.webp';
 import mysql from '../asserts/image/skills/mysql.webp';
@@ -45,6 +43,9 @@ import {useSelector} from "react-redux";
 import {RootState} from "../store/reducer/myReducer";
 import LazyLoad from "react-lazyload";
 // import flutter from './skills/flutter.webp';
+// import firebase from '../asserts/image/skills/firebase.webp';
+// import jupiter from '../asserts/image/skills/jupiter.webp';
+
 
 
 const Skills: React.FC = () => {
@@ -75,7 +76,6 @@ const Skills: React.FC = () => {
     {tooltip: "Node Js", image: node},
     {tooltip: "Nginx", image: nginx},
     {tooltip: "Amazon web services", image: amazon},
-    {tooltip: "Firebase", image: firebase},
     {tooltip: "Selenium", image: selenium},
     {tooltip: "JavaFX", image: javafx},
     {tooltip: "Hibernate", image: hibernate},
@@ -86,7 +86,6 @@ const Skills: React.FC = () => {
     {tooltip: "Maven", image: maven},
     {tooltip: "Git, github", image: git},
     {tooltip: "Google Colabs", image: colab},
-    {tooltip: "Jupiter notebook, jupiter lab", image: jupiter},
   ]
 
 

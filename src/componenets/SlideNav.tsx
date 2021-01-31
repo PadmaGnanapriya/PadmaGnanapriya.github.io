@@ -59,7 +59,7 @@ const SlideNav: React.FC = () => {
       </nav>
       <Row className="p-icon px-3" style={{position: 'fixed', bottom: '20px', margin: 'auto'}}>
         <Col className='p-1' sm={4} xs={4}>
-          <div style={{width: "50px"}}>
+          <div style={{width: "45px"}}>
             <a href="https://www.facebook.com/padma.gnanapriya/" target='_blank' rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path className="my-icon" stroke={isDark?"#bdc3c7":"#19192f"} strokeLinecap="round" strokeLinejoin="round"
@@ -70,7 +70,7 @@ const SlideNav: React.FC = () => {
           </div>
         </Col>
         <Col className='p-1' sm={4} xs={4}>
-          <div style={{width: "50px"}}>
+          <div style={{width: "45px"}}>
             <a href="https://www.linkedin.com/in/padma-gnanapriya-16b515180" target='_blank' rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path className="my-icon" stroke={isDark?"#bdc3c7":"#19192f"} strokeLinecap="round" strokeLinejoin="round"
@@ -81,7 +81,7 @@ const SlideNav: React.FC = () => {
           </div>
         </Col>
         <Col className='p-1' sm={4} xs={4}>
-          <div style={{width: "50px"}}>
+          <div style={{width: "45px"}}>
             <a href="https://github.com/PadmaGnanapriya" target='_blank' rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-2 -2 28 28" stroke="currentColor">
                 <path className="my-icon" stroke={isDark?"#bdc3c7":"#19192f"} strokeLinecap="round" strokeLinejoin="round"

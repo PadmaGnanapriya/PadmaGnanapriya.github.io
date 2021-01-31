@@ -52,6 +52,8 @@ const Education: React.FC = () => {
         <p className='text-left'>I passed the grade 5 scholarship exam at Polpogoda Dharmapala MV and I entered to
           Mahinda College Galle.</p>
       </div>
+      <br/>
+      <br/>
 
     </div>
   );
