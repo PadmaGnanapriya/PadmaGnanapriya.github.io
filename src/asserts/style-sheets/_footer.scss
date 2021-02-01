@@ -1,49 +1,15 @@
 @import "common/colors";
 
-.footer {
-  .social-media {
-    .fa {
-      padding: 12px;
-      font-size: 26px;
-      width: 45px;
-      height: 45px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 50%;
-      color: white;
-      margin-right: 0.25em;
-      background-color: grey;
-    }
-
-    .copy-right-text {
-      font-size: 0.85em;
-    }
-
-    .fa-facebook:hover {
-      background: #3B5998;
-    }
-
-    .fa-linkedin:hover {
-      background: #007bb5;
-    }
-
-    .fa-medium:hover {
-      background: #14bc08;
-    }
-
-    .fa-github:hover {
-      background: #4206b7;
-    }
-  }
-}
-
 .footer-dark {
-  @extend .footer;
   border-top: $background-color-light 2px solid;
   background: #0a1026;
 }
 
 .footer-light {
-  @extend .footer;
-  background: #152937;
+  background: #d1d2d2;
+  color: $font-color-dark;
+
+  .footer-icon{
+    color: white;
+  }
 }

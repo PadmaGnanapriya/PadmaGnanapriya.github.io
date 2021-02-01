@@ -10,6 +10,22 @@
   //background: yellow;
   color: $font-color-light;
 
+  //--------------------------------------------------
+
+  .my-home {
+    -webkit-text-stroke: 1.5px red;
+
+    img {
+      z-index: 100;
+    }
+
+    .topToBtn {
+      z-index: 300000 !important;
+    }
+  }
+
+
+
 
   //---------------------------------------------------
 
