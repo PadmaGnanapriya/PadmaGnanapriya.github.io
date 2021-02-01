@@ -24,9 +24,10 @@ const Header: React.FC = () => {
 
 
   const renderList = () => myList.map((item) => <Nav.Link key={item.view}><Link activeClass="active"
-                                                                className={`${item.value} myLink`} to={item.value}
-                                                                spy={true} smooth={true}
-                                                                duration={500}>{item.view}</Link></Nav.Link>)
+                                                                                className={`${item.value} myLink`}
+                                                                                to={item.value}
+                                                                                spy={true} smooth={true}
+                                                                                duration={500}>{item.view}</Link></Nav.Link>)
 
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
@@ -49,12 +50,12 @@ const Header: React.FC = () => {
         </Link></Navbar.Brand>
 
 
-        <Navbar.Brand className='float-right d-md-none' style={{position: 'fixed', right:'40px', top: '-4px'}}>
+        <Navbar.Brand className='float-right d-md-none' style={{position: 'fixed', right: '40px', top: '-4px'}}>
           <label className="pt-3 px-1" onClick={handleOnThemeChange}>
             <Switch className='isDarkModeToggle px-auto' onChange={handleOnThemeChange} checked={!isDark}/>
           </label>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"  style={{fontSize: '12px', padding: '1px 5px'}}/>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{fontSize: '12px', padding: '1px 5px'}}/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
@@ -62,7 +63,8 @@ const Header: React.FC = () => {
             {renderList()}
           </Nav>
           <label className="pt-3 px-1" onClick={handleOnThemeChange}>
-            <Switch className='isDarkModeToggle px-auto d-none d-md-block' onChange={handleOnThemeChange} checked={!isDark}/>
+            <Switch className='isDarkModeToggle px-auto d-none d-md-block' onChange={handleOnThemeChange}
+                    checked={!isDark}/>
           </label>
         </Navbar.Collapse>
       </Navbar>

@@ -10,16 +10,16 @@ AOS.init();
 
 const Contact: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
-  const[name, setName] = useState<string>('');
-  const[email, setEmail] = useState<string>('');
-  const[contact, setContact] = useState<string>('');
-  const[message, setMessage] =useState<string>('');
-  const[browser, setBrowser]=useState<string>("Undefined");
-  const[address, setAddress]=useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [contact, setContact] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [browser, setBrowser] = useState<string>("Undefined");
+  const [address, setAddress] = useState<string>('');
 
 
   useEffect(() => {
-    if(navigator.onLine){
+    if (navigator.onLine) {
       const getUA = () => {
         let device = "Unknown";
         const ua = {
@@ -56,7 +56,8 @@ const Contact: React.FC = () => {
         }
       }
       BrowserDetect();
-      (async () => {setAddress (await publicIp.v4());
+      (async () => {
+        setAddress(await publicIp.v4());
         await (
           fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${address}&entry.98424334=country&entry.1201372642=city&entry.2060483585=${browser}&entry.900514976=PadmaReact&entry.1590939237=Location&entry.2078832264=${getUA()}&entry.2144518207=${navigator.platform}`, {
             method: 'POST',
@@ -69,24 +70,24 @@ const Contact: React.FC = () => {
       })();
     }
     // console.clear();
-  },[address] )
+  }, [address])
 
 
-  const handleOnSubmit = async (event:FormEvent) => {
+  const handleOnSubmit = async (event: FormEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    if(email.slice(email.length-3)!=='com'){
+    if (email.slice(email.length - 3) !== 'com') {
       alert(email.slice(3));
       alert("Email is not correct");
       return;
     }
-    const phoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    if(!contact.match(phoneno)){
+    const phoneno = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
+    if (!contact.match(phoneno)) {
       alert("Contact number is not correct")
       return;
     }
     await (
-        fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${address}&entry.98424334=${name}&entry.1201372642=${name}&entry.2060483585=${email}&entry.900514976=PadmaReact&entry.1590939237=${contact}&entry.2078832264=ooo&entry.2144518207=${message}`, {
+      fetch(`https://docs.google.com/forms/d/e/1FAIpQLSeGernzdCiIhfkxreab4BFc15WG_9QLqnneBXc9d8RUfpFfyg/formResponse?entry.7345508=${address}&entry.98424334=${name}&entry.1201372642=${name}&entry.2060483585=${email}&entry.900514976=PadmaReact&entry.1590939237=${contact}&entry.2078832264=ooo&entry.2144518207=${message}`, {
         method: 'POST',
         mode: 'no-cors',
         headers: new Headers(),
@@ -155,27 +156,32 @@ const Contact: React.FC = () => {
             <Form onSubmit={handleOnSubmit}>
               <Row>
                 <Col xs={12} className="styled-input">
-                  <input type="text" onChange={(e:ChangeEvent<HTMLInputElement>)=> setName(e.target.value)} required/>
-                  <label>Name</label>
+                  <input id='username' type="text" onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setName(e.target.value)} required/>
+                  <label htmlFor='username'>Name</label>
                   <span/>
                 </Col>
-                <Col  xs={12} className="styled-input">
-                  <input type="email" onChange={(e:ChangeEvent<HTMLInputElement>)=> setEmail(e.target.value)} required/>
-                  <label>Email</label>
+                <Col xs={12} className="styled-input">
+                  <input id='user-email' type="email" onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)} required/>
+                  <label htmlFor='user-email'>Email</label>
                   <span/>
                 </Col>
-                <Col  xs={12} className="styled-input">
-                  <input type="text" onChange={(e:ChangeEvent<HTMLInputElement>)=> setContact(e.target.value)} required/>
-                  <label>Contact Number</label>
+                <Col xs={12} className="styled-input">
+                  <input id='user-number' type="text" onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setContact(e.target.value)} required/>
+                  <label htmlFor='user-number'>Contact Number</label>
                   <span/>
                 </Col>
-                <Col  xs={12} className="styled-input wide">
-                  <textarea onChange={(e:ChangeEvent<HTMLTextAreaElement>)=> setMessage(e.target.value)} required/>
-                  <label>Message</label>
+                <Col xs={12} className="styled-input wide">
+                  <textarea id='user-message' onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                    setMessage(e.target.value)} required/>
+                  <label htmlFor='user-message'>Message</label>
                   <span/>
                 </Col>
-                <Col xs={12} >
-                  <Button type='submit' className='px-5 py-2 mb-3' variant={isDark? 'dark':'info'}>Post to Padma</Button>
+                <Col xs={12}>
+                  <Button type='submit' className='px-5 py-2 mb-3' variant={isDark ? 'dark' : 'info'}>
+                    Post to Padma</Button>
                 </Col>
               </Row>
             </Form>

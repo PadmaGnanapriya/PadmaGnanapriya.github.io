@@ -43,7 +43,8 @@ const Achievements: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
   const renderAchievements = () => myAchievements.map((item: Achievement, index: number) =>
-    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6} className='py-0 px-2 px-lg-0'  key={"achieve"+index}>
+    <Col data-aos={index % 2 === 1 ? "fade-up-left" : "fade-up-right"} xs={12} sm={12} lg={6}
+         className='py-0 px-2 px-lg-0' key={"achieve" + index}>
       <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
         Click me to show the certificate</Tooltip>}>
         <a key={index} href={item.link} target='_blank' rel="noreferrer">

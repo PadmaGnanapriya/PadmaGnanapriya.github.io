@@ -47,7 +47,6 @@ import LazyLoad from "react-lazyload";
 // import jupiter from '../asserts/image/skills/jupiter.webp';
 
 
-
 const Skills: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
@@ -90,18 +89,21 @@ const Skills: React.FC = () => {
 
 
   const renderSkills = () => skills.map((skill: skill, index: number) =>
-    <Col data-aos="zoom-in-up" key={"skill"+ index}>
+    <Col data-aos="zoom-in-up" key={"skill" + index}>
       <LazyLoad height={171}>
-      <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}}  overlay={<Tooltip id={index + "-skill"}>
-        {skill.tooltip}</Tooltip>}><Image src={skill.image} alt='Language' width={170} height={66} className='languageIcon py-1'/>
-      </OverlayTrigger>
+        <OverlayTrigger placement="bottom" delay={{show: 500, hide: 0}} overlay={<Tooltip id={index + "-skill"}>
+          {skill.tooltip}</Tooltip>}><Image src={skill.image} alt='Language' width={170} height={66}
+                                            className='languageIcon py-1'/>
+        </OverlayTrigger>
       </LazyLoad>
     </Col>)
 
-  const tools=[intelijIDEA, webstorm,pycharm, androidStudio,visualCode, netbean, postman, seenBuilder, jira, slack];
+  const tools = [intelijIDEA, webstorm, pycharm, androidStudio, visualCode, netbean, postman, seenBuilder, jira, slack];
 
-  const renderTools = () => tools.map((item: string,index:number)=>
-    <Col key={"tool"+index} data-aos="flip-up"><LazyLoad height={85}><Image src={item} alt='Language' className='py-2 languageIcon' width={80} height={85}/></LazyLoad></Col>
+  const renderTools = () => tools.map((item: string, index: number) =>
+    <Col key={"tool" + index} data-aos="flip-up"><LazyLoad height={85}><Image src={item} alt='Language'
+                                                                              className='py-2 languageIcon' width={80}
+                                                                              height={85}/></LazyLoad></Col>
   )
   return (
     <div className={isDark ? 'skills-dark py-4' : 'skills-light py-4'}>
