@@ -10,7 +10,8 @@ const Footer: React.FC = () => {
 
       <div style={{display: 'inline-flex'}} className="p-icon pt-3 pb-2 footer-icon">
         <div style={{width: "45px"}}>
-          <a href="https://www.linkedin.com/in/padma-gnanapriya-16b515180" target='_blank' rel="noreferrer">
+          <a href="https://www.linkedin.com/in/padma-gnanapriya-16b515180" target='_blank' rel="noreferrer"
+             aria-label="Go to my linkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path className="my-icon" stroke={isDark ? "#bdc3c7" : "#19192f"} strokeLinecap="round"
                     strokeLinejoin="round"
@@ -20,7 +21,8 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div style={{width: "45px"}}>
-          <a href="https://www.facebook.com/padma.gnanapriya/" target='_blank' rel="noreferrer">
+          <a href="https://www.facebook.com/padma.gnanapriya/" target='_blank' rel="noreferrer"
+             aria-label="Go to my facebook">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path className="my-icon" stroke={isDark ? "#bdc3c7" : "#19192f"} strokeLinecap="round"
                     strokeLinejoin="round"
@@ -31,7 +33,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div style={{width: "45px"}}>
-          <a href="https://github.com/PadmaGnanapriya" target='_blank' rel="noreferrer">
+          <a href="https://github.com/PadmaGnanapriya" target='_blank' rel="noreferrer"  aria-label="Go to my github">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-2 -2 28 28" stroke="currentColor">
               <path className="my-icon" stroke={isDark ? "#bdc3c7" : "#19192f"} strokeLinecap="round"
                     strokeLinejoin="round"
@@ -43,7 +45,7 @@ const Footer: React.FC = () => {
 
         <div style={{width: "45px"}}>
           <a href="https://stackoverflow.com/users/11419131/padma-gnanapriya?tab=profile" target='_blank'
-             rel="noreferrer">
+             rel="noreferrer" aria-label="Go to my stack overflow">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-2 -2 30 30" stroke="currentColor">
               <path className="my-icon" stroke={isDark ? "#bdc3c7" : "#19192f"} strokeLinecap="round"
                     strokeLinejoin="round"
@@ -54,7 +56,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div style={{width: "45px"}}>
-          <a href="https://padmaisuru.medium.com/" target='_blank' rel="noreferrer">
+          <a href="https://padmaisuru.medium.com/" target='_blank' rel="noreferrer" aria-label="Go to my medium">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-2 -2 48 48" stroke="currentColor">
               <path className="my-icon" stroke={isDark ? "#bdc3c7" : "#19192f"} strokeLinecap="round"
                     strokeLinejoin="round"
