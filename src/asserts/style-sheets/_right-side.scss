@@ -126,6 +126,12 @@
         max-width: 325px;
         max-height: 255px;
       }
+      .yellow-btn{
+        font-weight: 600;
+      }
+      .green-btn{
+        background: #06470e;
+      }
 
       &:hover {
         transform: scale(1.02);

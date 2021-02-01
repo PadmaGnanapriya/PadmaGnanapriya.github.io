@@ -6,3 +6,13 @@ export interface IProject{
   overlay: any;
   sourceCodeLink: string | null;
 }
+
+
+export interface ISocialIcon {
+  link: string;
+  arialLabel: string;
+  isDark: boolean;
+  strokeWidth:number;
+  pathLine: string;
+  viewBox:string;
+}

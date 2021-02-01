@@ -19,17 +19,17 @@ const Project: React.FC<ProjectProps> = (props) => {
           <Card.Text><small>{project.description}</small>
           </Card.Text>
           <a href={project.viewLink} target='_blank' rel="noreferrer">
-            <Button variant="warning" className='mr-2'>Visit</Button></a>
+            <Button variant="warning" className='mr-2 yellow-btn'>Visit</Button></a>
           {
             project.overlay &&
             <OverlayTrigger trigger="click" placement="right" overlay={project.overlay}>
-                <Button variant="success">Source</Button>
+                <Button className='green-btn' variant="success">Source</Button>
             </OverlayTrigger>
           }
           {
             !project.overlay &&
             <a href={project.sourceCodeLink || ''} target='_blank' rel="noreferrer">
-                <Button variant="success" className='mr-2'>Source</Button></a>
+                <Button variant="success" className='mr-2 green-btn'>Source</Button></a>
           }
         </Card.Body>
       </Card>
