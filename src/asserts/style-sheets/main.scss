@@ -1,0 +1,24 @@
+@import "slide-navigation";
+@import "footer";
+@import "right-side";
+@import "header";
+
+
+.p-icon {
+
+  a:hover {
+    .my-icon {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      //animation: dash 5s infinite;
+      animation: dash 7s linear forwards;
+    }
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 100;
+    }
+  }
+
+}

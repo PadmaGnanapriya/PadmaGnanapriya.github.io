@@ -1,0 +1,15 @@
+@import "common/colors";
+
+.footer-dark {
+  border-top: $background-color-light 2px solid;
+  background: #0a1026;
+}
+
+.footer-light {
+  background: #d1d2d2;
+  color: $font-color-dark;
+
+  .footer-icon{
+    color: white;
+  }
+}
