@@ -13,28 +13,28 @@ import Project from "./Project";
 const Projects: React.FC = () => {
   const isDark: boolean = useSelector((state: RootState) => state.isDark);
 
-  const popoverProject1 = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">E-commerce site</Popover.Title>
-      <Popover.Content>
-        <a href='https://github.com/PadmaGnanapriya/p-redux-store' target='_blank' rel="noreferrer">
-          React frontend</a><br/>
-        <a href='https://github.com/PadmaGnanapriya/type-graph-express-api' target='_blank' rel="noreferrer">
-          GraphQL backend</a>
-      </Popover.Content>
-    </Popover>
-  );
+  // const popoverProject1 = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Title as="h3">E-commerce site</Popover.Title>
+  //     <Popover.Content>
+  //       <a href='https://github.com/PadmaGnanapriya/p-redux-store' target='_blank' rel="noreferrer">
+  //         React frontend</a><br/>
+  //       <a href='https://github.com/PadmaGnanapriya/type-graph-express-api' target='_blank' rel="noreferrer">
+  //         GraphQL backend</a>
+  //     </Popover.Content>
+  //   </Popover>
+  // );
 
   const myProjectList: IProject[] = [
-    {
-      image: project1,
-      title: "Completed E-Commerce Site with backend & admin panel",
-      description: "React | Redux | GraphQL | Boostrap | SCSS | MongoDb | Apollo | AWS S3 buckets, EC2 instance, " +
-        "Route 53 | Express | Git | JIRA",
-      viewLink: 'https://www.cominglevel.com/',
-      overlay: popoverProject1,
-      sourceCodeLink: null
-    },
+    // {
+    //   image: project1,
+    //   title: "Completed E-Commerce Site with backend & admin panel",
+    //   description: "React | Redux | GraphQL | Boostrap | SCSS | MongoDb | Apollo | AWS S3 buckets, EC2 instance, " +
+    //     "Route 53 | Express | Git | JIRA",
+    //   viewLink: 'https://www.cominglevel.com/',
+    //   overlay: popoverProject1,
+    //   sourceCodeLink: null
+    // },
     {
       image: pureHtml,
       title: "Pure HTML CSS JS site with responsive",
