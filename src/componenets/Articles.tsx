@@ -16,20 +16,23 @@ const Articles: React.FC = () => {
 
   const myArticles: Article[] = [
     {
-      title: "How Firefox and Google Chrome Use Process & Threads",
-      link: "https://medium.com/swlh/how-mozilla-firefox-and-google-chrome-use-process-threads-7f17a9c79ba0"
-    },
-    {
       title: "Emulator vs Simulator",
-      link: "https://medium.com/swlh/emulator-vs-simulator-1f7cff9571"
-    },
-    {
-      title: "What is a “Variable” in computer programming?",
-      link: "https://padmaisuru.medium.com/what-is-a-variable-in-computer-programming-5506164d9482"
+      link: "https://laptrinhx.com/emulator-vs-simulator-734889598/"
+      // link: "https://medium.com/swlh/emulator-vs-simulator-1f7cff9571"
     },
     {
       title: "SDLC Methods and Their Advantages and Disadvantages",
-      link: "https://medium.com/swlh/sdlc-methods-and-their-advantages-and-disadvantages-62eb27674497"
+      link: "https://laptrinhx.com/sdlc-methods-and-their-advantages-and-disadvantages-2680485242/"
+      // link: "https://medium.com/swlh/sdlc-methods-and-their-advantages-and-disadvantages-62eb27674497"
+    },
+    {
+      title: "How Firefox and Google Chrome Use Process & Threads",
+      link: "https://medium.com/swlh/how-mozilla-firefox-and-google-chrome-use-process-threads-7f17a9c79ba0"
+    },
+
+    {
+      title: "What is a “Variable” in computer programming?",
+      link: "https://padmaisuru.medium.com/what-is-a-variable-in-computer-programming-5506164d9482"
     },
     {
       title: "What is “dp” in android studio?",
@@ -68,7 +71,7 @@ const Articles: React.FC = () => {
       link: "https://padmaisuru.medium.com/software-licensing-29028ee03e33"
     },
     {
-      title: "Ethical Whistleblowing",
+      title: "Ethical Whistle-blowing",
       link: "https://padmaisuru.medium.com/ethical-whistle-blowing-cf5f8794fc35"
     }
   ];

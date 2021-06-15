@@ -1,8 +1,8 @@
 import React from 'react';
-import {Popover, Row} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 import project1 from "../asserts/image/projects/project1.webp";
 import pureHtml from "../asserts/image/projects/purehtml.webp";
-import pureHtml2 from "../asserts/image/projects/purehtml2.webp";
+import pGames from "../asserts/image/projects/p-games.webp";
 import simpleOs from "../asserts/image/projects/os.webp";
 import retrofit from "../asserts/image/projects/retrofit.webp";
 import {useSelector} from "react-redux";
@@ -26,15 +26,23 @@ const Projects: React.FC = () => {
   // );
 
   const myProjectList: IProject[] = [
-    // {
-    //   image: project1,
-    //   title: "Completed E-Commerce Site with backend & admin panel",
-    //   description: "React | Redux | GraphQL | Boostrap | SCSS | MongoDb | Apollo | AWS S3 buckets, EC2 instance, " +
-    //     "Route 53 | Express | Git | JIRA",
-    //   viewLink: 'https://www.cominglevel.com/',
-    //   overlay: popoverProject1,
-    //   sourceCodeLink: null
-    // },
+    {
+      image: project1,
+      title: "Completed E-Commerce Site with backend & admin panel",
+      description: "React | Redux | GraphQL | Boostrap | SCSS | MongoDb | Apollo | AWS S3 buckets, EC2 instance, " +
+        "Route 53 | Express | Git | JIRA",
+      viewLink: 'https://padmagnanapriya.github.io/p-redux-store',
+      overlay: null,
+      sourceCodeLink: "https://github.com/PadmaGnanapriya/type-graph-express-api"
+    },
+    {
+      image: pGames,
+      title: "Mini web games site",
+      description: "React | Redux | TypeScript | SCSS",
+      viewLink: "https://padmagnanapriya.github.io/p-games",
+      overlay: null,
+      sourceCodeLink: "https://github.com/PadmaGnanapriya/p-games"
+    },
     {
       image: pureHtml,
       title: "Pure HTML CSS JS site with responsive",
@@ -43,14 +51,7 @@ const Projects: React.FC = () => {
       overlay: null,
       sourceCodeLink: "https://github.com/PadmaGnanapriya/Tourism-site-pure"
     },
-    {
-      image: pureHtml2,
-      title: "Pure HTML CSS JS site with responsive",
-      description: "HTML 5 | CSS 3 | JavaScript",
-      viewLink: "https://nnybsswi6mfwyhnhh4nh8a-on.drv.tw/Websites/www.Sri_Lankan_Tourism02.com/pevents.html",
-      overlay: null,
-      sourceCodeLink: "https://github.com/PadmaGnanapriya/susaa-site-02"
-    },
+
 
     {
       image: simpleOs,
