@@ -15,9 +15,15 @@ const Education: React.FC = () => {
 
       <div data-aos="fade-up">
         <a href='https://www.kln.ac.lk/' target='_blank' rel="noreferrer"><h2 className='text-left'>
-          University of Kelaniya</h2></a>
-        <p className='text-left'>Since 2019 February I am learning software engineering. Currently in Level 3
-          maintaining the GPA at 3.33 out of 4.0
+          <strong>Bachelor of Science Honours in Software Engineering</strong><br/>
+          <i>University of Kelaniya, Sri Lanka</i><br/>
+          <small>Second Class Upper Division Honours (GPA: 3.54/4)</small></h2></a>
+        <p className='text-left'>I graduated with a degree in Software Engineering from the University of Kelaniya,
+          earning a Second Class Upper Division Honours. During my studies, I specialized in web development,
+          data science, and mobile development in my third and fourth years. I also conducted academic research
+          on creating 3D websites from scratch. I learned many important theories and gained hands-on experience
+          with different technologies through various projects, which helped me develop strong skills in
+          programming and problem-solving.
         </p>
         <br/>
       </div>
