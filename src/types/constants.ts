@@ -1,2 +1,0 @@
-export const CHANGE_MODE = 'CHANGE_MODE';
-export const CHANGE_VIEW_Y_POSITION = 'CHANGE_VIEW_Y_POSITION';

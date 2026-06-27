@@ -1,18 +1,98 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens — dark, enterprise, single indigo accent            */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-base: #0a0a0b;
+  --color-surface: #141416;
+  --color-surface-2: #1b1b1f;
+  --color-line: #26262c;
+
+  --color-accent: #6366f1;
+  --color-accent-2: #818cf8;
+
+  --color-ink: #ededed;
+  --color-ink-muted: #a1a1aa;
+  --color-ink-subtle: #71717a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* offset for the fixed navbar */
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-accent) 35%, transparent);
+    color: #fff;
+  }
+
+  /* Subtle scrollbar that fits the dark theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border-radius: 9999px;
+    border: 2px solid var(--color-base);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a42;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
 }
 
-.App {
-    text-align: center;
-    overflow-x: hidden;
+/* ------------------------------------------------------------------ */
+/*  Reusable utilities                                                */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)];
+  }
+
+  .accent-gradient-text {
+    background: linear-gradient(90deg, var(--color-accent-2), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-glow {
+    background:
+      radial-gradient(60rem 40rem at 70% -10%, color-mix(in oklab, var(--color-accent) 16%, transparent), transparent 60%),
+      radial-gradient(40rem 30rem at 0% 10%, color-mix(in oklab, var(--color-accent-2) 8%, transparent), transparent 55%);
+  }
 }
