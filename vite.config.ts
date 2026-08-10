@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// padmagnanapriya.github.io is a USER page served at the domain root,
-// so the base path is '/' (default). Do NOT set a '/repo/' sub-path.
+// Served at the custom apex domain padmagnanapriya.com (a GitHub Pages
+// USER page) at the domain root, so the base path is '/' (default).
+// Do NOT set a '/repo/' sub-path.
 export default defineConfig({
   base: '/',
   plugins: [
@@ -16,6 +17,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
+    // GitHub Pages on this repo serves from the master branch /docs folder,
+    // so we emit the static build straight into docs/.
+    outDir: 'docs',
+    emptyOutDir: true,
     target: 'es2020',
     cssCodeSplit: true,
   },

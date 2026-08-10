@@ -1,8 +1,8 @@
 # Padma Gnanapriya — Portfolio
 
-Personal portfolio for **padmagnanapriya.github.io**. Built with **Vite + React 19 + TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and the **React Compiler**. Pages are **prerendered to static HTML** with `vite-react-ssg`, so AI bots and ATS systems can read the content (skills, experience, JSON-LD) without running JavaScript.
+Personal portfolio for **www.padmagnanapriya.com**. Built with **Vite + React 19 + TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and the **React Compiler**. Pages are **prerendered to static HTML** with `vite-react-ssg`, so AI bots and ATS systems can read the content (skills, experience, JSON-LD) without running JavaScript.
 
-Live: [https://padmagnanapriya.github.io/](https://padmagnanapriya.github.io/)
+Live: [https://www.padmagnanapriya.com/](https://www.padmagnanapriya.com/)
 
 ## Tech stack
 
@@ -11,16 +11,16 @@ Live: [https://padmagnanapriya.github.io/](https://padmagnanapriya.github.io/)
 | Build / bundler | Vite 6                                  |
 | UI              | React 19 (+ React Compiler auto-memo)   |
 | Styling         | Tailwind CSS v4 (`@tailwindcss/vite`)   |
-| Animation       | Framer Motion (`motion`)                |
+| Animation       | Motion for React (`motion`)             |
 | Static render   | `vite-react-ssg` (build-time prerender) |
-| Hosting         | GitHub Pages via GitHub Actions         |
+| Hosting         | GitHub Pages (master branch `/docs`)    |
 
 ## Local development
 
 ```bash
 npm install      # install dependencies
 npm run dev      # start dev server (http://localhost:5173)
-npm run build    # prerender to ./dist
+npm run build    # prerender static site into ./docs (what GitHub Pages serves)
 npm run preview  # serve the production build locally
 npm run typecheck
 ```
@@ -36,13 +36,11 @@ src/
   index.css            # Tailwind v4 theme (dark + indigo) & base styles
   data/profile.ts      # ← ALL editable content lives here
   lib/medium.ts        # Medium RSS → JSON fetch
-  components/          # Hero, Experience, Skills, Articles, Gallery, Contact, ...
+  components/          # Hero, Experience, Education, Certifications, Skills, Articles, Contact, Footer
 public/
-  images/              # profile photo + skill icons
-  gallery/office/      # "Office Vibe" photos
-  gallery/university/  # "University Days" photos
+  images/              # profile photo + Open Graph image
   cv/                  # your CV PDF goes here
-.github/workflows/deploy.yml  # CI build + deploy to GitHub Pages
+docs/                  # built site (committed — GitHub Pages serves this)
 ```
 
 ---
@@ -56,7 +54,7 @@ Everything you need to personalise is in **`src/data/profile.ts`** plus a few fi
 Drop your CV at:
 
 ```
-public/cv/Padma_Gnanapriya_CV.pdf
+public/cv/Padma_Gnanapriya.pdf
 ```
 
 If you use a different filename, update `cvPath` in `src/data/profile.ts`. Every "Download CV" button (navbar, hero, footer) uses this path.
@@ -65,24 +63,7 @@ If you use a different filename, update `cvPath` in `src/data/profile.ts`. Every
 
 Replace `public/images/padma.webp` with your photo (square works best, ~640×640). Or point `profile.photo` at a new filename.
 
-### 3. Gallery photos
-
-Drop images into:
-
-```
-public/gallery/office/        →  "Office Vibe"
-public/gallery/university/    →  "University Days"
-```
-
-Then list them in `galleryImages` in `src/data/profile.ts`:
-
-```ts
-{ src: '/gallery/office/my-photo.webp', alt: 'Describe the photo', category: 'office' }
-```
-
-`.webp` is recommended for speed; `.jpg`/`.png` also work. Until you add photos, the gallery shows a friendly placeholder (broken images are auto-hidden).
-
-### 4. Medium articles
+### 3. Medium articles
 
 Set your Medium handle (without the `@`) in `src/data/profile.ts`:
 
@@ -92,7 +73,7 @@ mediumUsername: 'padmagnanapriya',
 
 Articles load live at runtime via the free [rss2json](https://rss2json.com) bridge. For higher rate limits, sign up there and append `&api_key=YOUR_KEY` to the endpoint in `src/lib/medium.ts`. If the feed can't load, the section degrades to a "Visit my Medium" link.
 
-### 5. Contact form (where submissions go)
+### 4. Contact form (where submissions go)
 
 By default the form opens the visitor's email client (mailto → `profile.email`). To receive submissions as email instead:
 
@@ -104,20 +85,34 @@ By default the form opens the visitor's email client (mailto → `profile.email`
 
 Client-side validation (name, email format, message length) runs regardless.
 
-### 6. Social links / text
+### 5. Social links / text
 
-GitHub, LinkedIn, Medium URLs, headline, experience timeline and skills all live in `src/data/profile.ts`.
+GitHub, LinkedIn, Medium URLs, headline, experience timeline, certifications and skills all live in `src/data/profile.ts`.
+
+### 6. Content conventions in `profile.ts`
+
+- **Experience highlights** support `**bold**` markers — the lead-in phrase of each
+  bullet is rendered in `<strong>`, matching the CV.
+- **`certifications`** drives the Licenses & certifications section and its navbar
+  link. Both disappear automatically while the array is empty.
+- **`availableForFreelance`** toggles the "Available for freelance" pill in the Hero.
+- **`nameVariants`** holds the Sinhala/Tamil spellings shown in the footer; keep them
+  in sync with `alternateName` in `index.html`.
 
 ---
 
 ## Deployment
 
-Deploys automatically via **GitHub Actions** (`.github/workflows/deploy.yml`) on every push to `master`.
+GitHub Pages serves this repo from the **`master` branch `/docs` folder** (no settings change needed — it's the repo's existing configuration). To publish changes:
 
-**One-time setup (do this once in the GitHub UI):**
+```bash
+npm run build              # regenerates ./docs
+git add -A && git commit -m "update site"
+git push                   # GitHub Pages publishes within ~1 minute
+```
 
-> **Settings → Pages → Build and deployment → Source → select "GitHub Actions"**
+`docs/` includes a `.nojekyll` file so GitHub Pages serves Vite's `assets/` folder untouched.
 
-This switches Pages off the old `/docs` folder and onto the Actions workflow. After that, every `git push` to `master` rebuilds and publishes the site. You can also trigger a manual run from the **Actions** tab ("Deploy to GitHub Pages" → *Run workflow*).
-
-The build output (`/dist`) is **not** committed — Actions builds it fresh each time.
+> Prefer a CI pipeline? You can add a GitHub Actions workflow that builds and deploys
+> on push instead — that requires switching **Settings → Pages → Source → "GitHub Actions"**
+> (an owner-only setting). Ask and I'll set it up.

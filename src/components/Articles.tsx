@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { profile } from '../data/profile'
 import { fetchMediumArticles, type Article } from '../lib/medium'
 import { ArrowIcon } from './icons'
-import { Reveal } from './Reveal'
+import { Stagger, StaggerItem } from './Reveal'
 import { Section } from './Section'
 
 type State =
@@ -21,7 +21,7 @@ export function Articles() {
 
   useEffect(() => {
     let active = true
-    fetchMediumArticles(6).then((articles) => {
+    fetchMediumArticles(9).then((articles) => {
       if (!active) return
       setState(articles.length ? { status: 'ready', articles } : { status: 'empty' })
     })
@@ -34,8 +34,8 @@ export function Articles() {
     <Section
       id="articles"
       eyebrow="Writing"
-      title="Recent articles on Medium"
-      intro="Notes on engineering, architecture and building at scale — pulled live from my Medium feed."
+      title="Articles on Medium"
+      intro="Notes on engineering, architecture and building at scale — pulled live from my Medium feed, so new posts appear here automatically."
     >
       {state.status === 'loading' && (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -67,9 +67,9 @@ export function Articles() {
 
       {state.status === 'ready' && (
         <>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {state.articles.map((article, i) => (
-              <Reveal as="article" key={article.link} delay={i * 0.05} className="card group flex h-full flex-col overflow-hidden">
+          <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {state.articles.map((article) => (
+              <StaggerItem as="article" key={article.link} className="card card-lift group flex h-full flex-col overflow-hidden">
                 <a href={article.link} target="_blank" rel="noopener noreferrer" className="flex h-full flex-col">
                   {article.thumbnail && (
                     <div className="aspect-[16/9] overflow-hidden bg-[var(--color-surface-2)]">
@@ -94,9 +94,9 @@ export function Articles() {
                     </span>
                   </div>
                 </a>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
           <div className="mt-10">
             <a
               href={profile.socials.medium}

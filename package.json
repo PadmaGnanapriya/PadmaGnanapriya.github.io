@@ -1,6 +1,6 @@
 {
   "name": "padma-portfolio",
-  "homepage": "https://padmagnanapriya.github.io",
+  "homepage": "https://www.padmagnanapriya.com",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,13 +8,13 @@
     "dev": "vite",
     "build": "vite-react-ssg build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "deploy": "npm run build && git add -A && (git diff --cached --quiet || git commit -m \"deploy: update site\") && git push origin master"
   },
   "dependencies": {
     "motion": "^11.18.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^6.30.0",
     "vite-react-ssg": "^0.8.7"
   },
   "devDependencies": {

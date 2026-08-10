@@ -1,0 +1,37 @@
+# Padma Gnanapriya
+
+> Full-Stack Software Engineer and Associate Technical Lead at Velaris, based in Sri Lanka. 4+ years building enterprise B2B SaaS end-to-end across React, Node.js and AWS, specialising in scalable, cost-optimized cloud platforms and performance engineering. Available for select freelance web development.
+
+## About
+
+- Name: Padma Gnanapriya
+- Current role: Associate Technical Lead at Velaris (since Jun 2026)
+- Previously: Senior Software Engineer at Velaris (Jun 2024 – Jun 2026), and earlier Software Engineer, Associate Software Engineer and Intern at Velaris (from 2022); trainee roles at Intahub and SoftVessel (2021).
+- Location: Galle / Colombo, Sri Lanka
+- Education: BSc (Hons) Software Engineering, University of Kelaniya (GPA 3.54/4.0); professional diploma from IJSE, Galle.
+- Contact: padmaisuru@gmail.com, padmagnananpriya@gmail.com
+
+## Expertise
+
+- Languages & frameworks: JavaScript, TypeScript, Java, Node.js, Express.js, React, Redux
+- Cloud & DevOps: AWS (Lambda, SES, SQS, CloudWatch, EC2, ECS), serverless architecture, CI/CD
+- Data & architecture: PostgreSQL, MongoDB, REST APIs, microservices, event-driven architecture, system design, performance optimization
+- Leadership: technical leadership, mentorship, code review, agile delivery
+
+## Notable impact
+
+- Re-architected a data-sync flow for an 11x throughput gain and ~99% fewer external API calls.
+- Built a multi-tenant AWS SES email capability validated at 60,000 emails per run with zero failures.
+- Delivered enterprise integrations (Stripe, Mixpanel, Snowflake).
+- Won the internal Velaris Shield security challenge; fixed critical findings from an external 7ASecurity audit.
+
+## Links
+
+- Website: https://www.padmagnanapriya.com/
+- LinkedIn: https://www.linkedin.com/in/padma-gnanapriya/
+- GitHub: https://github.com/PadmaGnanapriya
+- Medium: https://medium.com/@padmagnanapriya
+
+## Freelance
+
+Padma takes on select freelance web development projects — modern, fast, accessible websites and web apps. Contact via the website form or padmaisuru@gmail.com.

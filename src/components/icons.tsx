@@ -36,13 +36,6 @@ export const DownloadIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const MailIcon = (p: SVGProps<SVGSVGElement>) => (
-  <svg {...base} aria-hidden="true" {...p}>
-    <rect x="3" y="5" width="18" height="14" rx="2" />
-    <path d="m3 7 9 6 9-6" />
-  </svg>
-)
-
 export const ArrowIcon = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base} aria-hidden="true" {...p}>
     <path d="M5 12h14m0 0-6-6m6 6-6 6" />

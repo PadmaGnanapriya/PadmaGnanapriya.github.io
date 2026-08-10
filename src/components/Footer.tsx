@@ -9,6 +9,15 @@ export function Footer() {
       <div className="container-x flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <p className="font-semibold">{profile.name}</p>
+          {/* Native-script spellings — helps Sinhala/Tamil searches find this page. */}
+          <p className="mt-1 text-sm text-[var(--color-ink-subtle)]">
+            {profile.nameVariants.map((variant, i) => (
+              <span key={variant.lang}>
+                {i > 0 && <span aria-hidden="true"> · </span>}
+                <span lang={variant.lang}>{variant.name}</span>
+              </span>
+            ))}
+          </p>
           <p className="mt-1 text-sm text-[var(--color-ink-subtle)]">{profile.headline}</p>
         </div>
 

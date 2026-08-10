@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/profile'
+import { certifications, profile } from '../data/profile'
 import { CloseIcon, DownloadIcon, MenuIcon } from './icons'
 
 const navItems = [
   { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
+  // Only surfaced once there is at least one credential to link to.
+  ...(certifications.length > 0 ? [{ href: '#certifications', label: 'Certifications' }] : []),
   { href: '#skills', label: 'Skills' },
   { href: '#articles', label: 'Articles' },
-  { href: '#gallery', label: 'Gallery' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -24,11 +26,11 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'border-b border-[var(--color-line)] bg-[var(--color-base)]/85 backdrop-blur-md' : 'border-b border-transparent'
+        scrolled ? 'border-b border-[var(--color-line)] bg-[var(--color-canvas)]/85 backdrop-blur-md' : 'border-b border-transparent'
       }`}
     >
       <nav aria-label="Primary" className="container-x flex h-16 items-center justify-between">
-        <a href="#top" className="text-base font-bold tracking-tight">
+        <a href="#top" className="text-base font-bold tracking-tight text-[var(--color-ink)]">
           Padma<span className="text-[var(--color-accent-2)]">.</span>
         </a>
 
@@ -69,7 +71,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-[var(--color-line)] bg-[var(--color-base)] md:hidden">
+        <div className="border-t border-[var(--color-line)] bg-[var(--color-canvas)] md:hidden">
           <ul className="container-x flex flex-col py-3">
             {navItems.map((item) => (
               <li key={item.href}>

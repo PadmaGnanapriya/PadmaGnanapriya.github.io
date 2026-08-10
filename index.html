@@ -5,37 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0b" />
 
-    <title>Padma Gnanapriya — Full-Stack Engineer & Associate Tech Lead</title>
+    <title>Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead</title>
     <meta
       name="description"
-      content="Padma Gnanapriya is a Full-Stack Engineer and Associate Tech Lead at Velaris, specialising in scalable cloud solutions, enterprise integrations and performance optimization with Node.js, React and AWS."
+      content="Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead at Velaris, building scalable, cost-optimized cloud platforms with Node.js, React and AWS."
     />
     <meta
       name="keywords"
-      content="Padma Gnanapriya, Full-Stack Engineer, Associate Tech Lead, Velaris, Node.js, React, AWS, TypeScript, Cloud Solutions, Enterprise Integrations, University of Moratuwa, Tech Leadership, Freelance Web Developer"
+      content="Padma Gnanapriya, Padma Ganapriya, පද්ම ඥානප්‍රිය, පද්මා ඥානප්‍රියා, ඥානප්‍රිය, பத்மா ஞானப்பிரியா, பத்ம ஞானப்ரியா, ஞானப்பிரியா, padmaisuru@gmail.com, padmagnananpriya@gmail.com, +94766328189, Full-Stack Engineer, Associate Technical Lead, Velaris, Freelance Web Development, Freelance Web Developer Sri Lanka, Web Development Project, Node.js, React, AWS, TypeScript, Cloud Solutions, Enterprise Integrations, University of Kelaniya, Galle, Sri Lanka, Tech Leadership"
     />
     <meta name="author" content="Padma Gnanapriya" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://padmagnanapriya.github.io/" />
+    <link rel="canonical" href="https://www.padmagnanapriya.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://padmagnanapriya.github.io/" />
-    <meta property="og:title" content="Padma Gnanapriya — Full-Stack Engineer & Associate Tech Lead" />
+    <meta property="og:site_name" content="Padma Gnanapriya" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="si_LK" />
+    <meta property="og:locale:alternate" content="ta_LK" />
+    <meta property="og:url" content="https://www.padmagnanapriya.com/" />
+    <meta property="og:title" content="Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead" />
     <meta
       property="og:description"
       content="Scalable cloud solutions, enterprise integrations and performance optimization with Node.js, React and AWS."
     />
-    <meta property="og:image" content="https://padmagnanapriya.github.io/images/padma.webp" />
+    <meta property="og:image" content="https://www.padmagnanapriya.com/images/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Padma Gnanapriya — Full-Stack Engineer & Associate Tech Lead" />
+    <meta name="twitter:title" content="Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead" />
     <meta
       name="twitter:description"
       content="Scalable cloud solutions, enterprise integrations and performance optimization with Node.js, React and AWS."
     />
-    <meta name="twitter:image" content="https://padmagnanapriya.github.io/images/padma.webp" />
+    <meta name="twitter:image" content="https://www.padmagnanapriya.com/images/og.jpg" />
 
     <!-- Icons & manifest (preserved from the existing site) -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -44,48 +51,154 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Inter is self-hosted: the @font-face lives in src/index.css and points at
+         /fonts/inter-latin-var.woff2, so there are no external font requests. -->
 
-    <!-- Structured data: Person (parsed by AI bots & ATS without running JS) -->
+    <!-- Preload the LCP font + hero image for a fast largest-contentful-paint -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-var.woff2" crossorigin />
+    <link rel="preload" as="image" href="/images/padma.webp" fetchpriority="high" />
+
+    <!-- Structured data: knowledge graph (Person + WebSite + ProfilePage + FAQ).
+         Parsed by search, AI answer engines (AEO/GEO) and ATS without running JS. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Padma Gnanapriya",
-        "url": "https://padmagnanapriya.github.io/",
-        "image": "https://padmagnanapriya.github.io/images/padma.webp",
-        "jobTitle": "Associate Tech Lead",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Velaris",
-          "url": "https://velaris.io"
-        },
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Moratuwa"
-        },
-        "knowsAbout": [
-          "Node.js",
-          "React",
-          "AWS",
-          "TypeScript",
-          "Cloud Architecture",
-          "Enterprise Integrations",
-          "Performance Optimization",
-          "Microservices",
-          "System Design",
-          "Team Leadership"
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/padma-gnanapriya/",
-          "https://github.com/PadmaGnanapriya",
-          "https://medium.com/@padmagnanapriya"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.padmagnanapriya.com/#person",
+            "name": "Padma Gnanapriya",
+            "url": "https://www.padmagnanapriya.com/",
+            "image": "https://www.padmagnanapriya.com/images/og.jpg",
+            "jobTitle": "Associate Technical Lead",
+            "description": "Full-Stack Software Engineer and Associate Technical Lead at Velaris with 5+ years of software engineering experience, including 4.5+ years building enterprise B2B SaaS across React, Node.js and AWS, specialising in scalable, cost-optimized cloud platforms and performance engineering. Available for freelance web development projects.",
+            "alternateName": [
+              "Padma Gnanapriya",
+              "Padma Ganapriya",
+              "පද්ම ඥානප්‍රිය",
+              "පද්මා ඥානප්‍රියා",
+              "பத்மா ஞானப்பிரியா",
+              "பத்ம ஞானப்ரியா"
+            ],
+            "email": ["padmaisuru@gmail.com", "padmagnananpriya@gmail.com"],
+            "telephone": "+94766328189",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Personal / Freelance enquiries",
+              "telephone": "+94766328189",
+              "email": "padmaisuru@gmail.com",
+              "areaServed": "Worldwide",
+              "availableLanguage": ["English"]
+            },
+            "worksFor": { "@type": "Organization", "name": "Velaris", "url": "https://velaris.io" },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Galle",
+              "addressCountry": "LK"
+            },
+            "alumniOf": [
+              { "@type": "CollegeOrUniversity", "name": "University of Kelaniya, Sri Lanka" },
+              { "@type": "EducationalOrganization", "name": "IJSE — Institute of Software Engineering, Galle" }
+            ],
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Oracle Cloud Infrastructure Foundations 2021 Associate",
+                "credentialCategory": "certification",
+                "recognizedBy": { "@type": "Organization", "name": "Oracle" },
+                "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=2D812FD3978C38DD4347691C1A2B607EC3E47B37B6D69B6AC4558C8885ED1224"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "AWS Cloud Quest: Cloud Practitioner",
+                "credentialCategory": "badge",
+                "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "Amazon Web Services Training and Certification"
+                },
+                "url": "https://www.credly.com/badges/6156d558-d179-4de5-8851-e915f58e76f6/linked_in_profile"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "AWS Fundamentals: Going Cloud-Native",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" },
+                "url": "https://www.coursera.org/account/accomplishments/verify/M3CJ9HPAZFEN"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "AWS Fundamentals: Migrating to the Cloud",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" },
+                "url": "https://www.coursera.org/account/accomplishments/verify/7VLB2YLSN7N7"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "AWS Fundamentals: Building Serverless Applications",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" },
+                "url": "https://www.coursera.org/account/accomplishments/certificate/F59TH74J4DF2"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Essential Google Cloud Infrastructure: Core Services",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Google Cloud" },
+                "url": "https://www.coursera.org/account/accomplishments/certificate/KMP9AV296XKY"
+              }
+            ],
+            "knowsAbout": [
+              "JavaScript",
+              "TypeScript",
+              "Node.js",
+              "Express.js",
+              "React",
+              "Redux",
+              "Java",
+              "Spring Boot",
+              "AWS",
+              "AWS Lambda",
+              "Docker",
+              "CI/CD",
+              "Serverless Architecture",
+              "Microservices",
+              "Event-Driven Architecture",
+              "System Design",
+              "Performance Optimization",
+              "PostgreSQL",
+              "MongoDB",
+              "Technical Leadership",
+              "Freelance Web Development"
+            ],
+            "knowsLanguage": [
+              { "@type": "Language", "name": "English", "alternateName": "en" },
+              { "@type": "Language", "name": "Sinhala", "alternateName": "si" },
+              { "@type": "Language", "name": "Tamil", "alternateName": "ta" }
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/padma-gnanapriya/",
+              "https://github.com/PadmaGnanapriya",
+              "https://medium.com/@padmagnanapriya"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.padmagnanapriya.com/#website",
+            "url": "https://www.padmagnanapriya.com/",
+            "name": "Padma Gnanapriya",
+            "inLanguage": "en",
+            "about": { "@id": "https://www.padmagnanapriya.com/#person" },
+            "publisher": { "@id": "https://www.padmagnanapriya.com/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://www.padmagnanapriya.com/#profilepage",
+            "url": "https://www.padmagnanapriya.com/",
+            "name": "Padma Gnanapriya — Full-Stack Engineer & Associate Technical Lead",
+            "isPartOf": { "@id": "https://www.padmagnanapriya.com/#website" },
+            "about": { "@id": "https://www.padmagnanapriya.com/#person" },
+            "mainEntity": { "@id": "https://www.padmagnanapriya.com/#person" }
+          }
         ]
       }
     </script>
